@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>纳税人学堂-课件下载</title>
+	
+</head>
+<body>
+<div class="common_container" >
+  <div class="course_container" id="course_container">
+		<p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">课件下载</a>>>
+     
+     <span class="fork_detail">
+      <span id="fork" class="fork">营改增</span><span class="fork_img"><img src="images/fork.png" width="10" height="10"/></span>
+    </span>
+    </p>
+
+	<div class="course_left">
+      <div class="course_search">
+          <div class='launch_detail' style="display:none">
+             <span class='launch_search'></span>
+             <span class="launch_search_name">展开搜索</span>
+          </div>
+         <div class="course_top">
+             <div class="course_search1"> 
+               <label>课程名称：</label>
+               <input type="text">
+               <span class="search_btn">搜索</span>
+              </div>
+                 <div class="course_search1"> 
+               <label class='time_label'>授课时间：</label>
+                 <input type="text"  id="actionDate" class="easyui-datebox">
+                 <label class="time_to">到</label>
+               <input type="text"  class="easyui-datebox">
+              </div>
+              <div class="course_search1 single_change"> 
+                 <label class="class_course">分类课程：</label>
+                  <span class="course_name">增值税</span>
+                  <span class="course_name">消费税</span>
+                  <span class="course_name">企业所得税</span>
+                  <span class="course_name">车辆购置税</span>
+                  <span class="course_name">进出口税收</span>
+                  <span class="course_name">非居民税收</span>
+                  <span class="course_name">其他</span>
+              </div>
+              <div class="course_search1 course_searchlast single_change"> 
+                 <label class="class_course">专题课程：</label>
+                  <span class="course_name">新办纳税人</span>
+                  <span class="course_name li_on">营改增</span>
+                  <span class="course_name">小微企业税收优惠</span>
+                  <span class="course_name">电子税务局</span>
+              </div>
+         </div>
+           <div class="searchdiv-fold open">收起搜索</div>
+
+          <div class="course_main">
+            <div class="main_top">
+              <span class="course_data active" data-option="all">全部课件</span>
+              <span class="course_data" data-option="new">最新课件</span> 
+              <div class='course_style list active' data-option="list"><span></span></div>
+              <div class="course_style table" data-option="table"><span></span></div>
+            </div>
+            <ul id="coursecontent" class="list">             
+            </ul>          
+          </div>
+          <!--分页-->
+         <div class="commonpage"></div>     
+         <!--分页-->
+      </div>
+  </div>
+
+    <div class="commontabs right_container">
+      <div class="menus-item menus2">
+        <span class="active">热门推荐</span>
+      </div>
+
+       <div class="commonlist_container" >
+          <div id="recommend_cousrse" class="item">
+             推荐课程
+          </div>
+       </div>
+      
+    </div>
+	
+  </div>
+	
+
+
+</div>	
+<script type="text/javascript" src="js/easyUI/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyUI/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript">
+ $(function(){
+  var courseDownjosn =[
+  {
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"全部课程-营改增及融资租赁行业税收培训",
+    unit:"南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"1000"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"全部课程",
+    unit:"南京市鼓楼分局南京市鼓楼分局南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"1000"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"全部课程",
+    unit:"南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"1000"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"营改增及融资租赁行业税收培训",
+    unit:"南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"1000"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"营改增及融资租赁行业税收培训",
+    unit:"南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"123"
+  }
+]
+var courseDownjosn2 =[
+  {
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"最新最新课件xxxxx",
+    unit:"南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"123"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"最新最新课件xxxxx",
+    unit:"南京市鼓楼分局南京市鼓楼分局南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"123"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"最新最新课件xxxxx",
+    unit:"南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"123"
+  },{
+    id:"",
+    imgurl:"images/pic0-01.png",
+    name:"最新最新课件xxxxx",
+    unit:"南京市鼓楼分局南京市鼓楼分局南京市鼓楼分局",
+    date:"2015-11-27 16:00",
+    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
+    size:"5.5M",
+    type:"视频",
+    downloadnum:"123"
+  }
+] 
+      //通用分页插件
+      $(".commonpage").createPage({
+          pageCount:66,//页数的总数
+          pageSize:10,//每页10条记录
+          current:5, //默认第一页
+          position:"center",
+          backFn:function(pageCurrent,pageSize,pageCount){
+             
+          }
+      });
+          
+        //分类课程 专题课程选中样式
+        $(".single_change span").click(function(){ 
+             $(this).parents(".single_change").children().children("span").removeClass("li_on");
+             $(this).toggleClass("li_on");
+             var _value= $(this).context.innerHTML;
+             $(".fork_detail").show();
+             $("#fork").html(_value);
+
+         });
+        loadData("all");//默认加载全部课程
+      //全部课程，最新课程切换切换
+      $(".course_data").click(function(){
+         var  op =$(this).attr("data-option");
+         $(this).addClass("active").siblings(".course_data").removeClass("active");
+         loadData(op);
+      });
+      //list和table两种展现方式切换
+      $(".course_style").click(function(){
+          var  style =$(this).attr("data-option");
+          $(this).addClass("active").siblings(".course_style").removeClass("active");
+          $("#coursecontent").attr("class",style);
+      });
+
+    $(".fork_img").click(function(){
+       $(".single_change span.li_on").toggleClass("li_on");
+       $(this).parent(".fork_detail").hide();
+
+    });
+    function loadData(op){
+      switch(op){
+        case "all": courseDownloadInit("#coursecontent",courseDownjosn);
+          break;
+        case "new": courseDownloadInit("#coursecontent",courseDownjosn2);
+          break;
+      }
+    }
+      /*加载最新，推荐视频列表*/
+
+     commonlistInit_courseDownload({
+      targetId:"#new_course",
+      josn:courseDownjosn
+     });
+     commonlistInit_courseDownload({
+      targetId:"#recommend_cousrse",
+      josn:courseDownjosn2
+     });
+
+});
+
+</script>
+
+</body>
+</html>

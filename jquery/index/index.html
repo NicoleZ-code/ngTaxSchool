@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>纳税人学堂</title>
+	<link href="images/favicon.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="js/layer/skin/layer.css">
+	<link rel="stylesheet" type="text/css" href="js/easyUI/themes/default/easyui.css">
+</head>
+<body>
+	<div class="headbox">
+		<div id="head">
+			<div class="logo"></div>
+			<div class="links"> 
+				<span><a href="register.html">注册</a></span>
+				<span>|</span>	
+				<span id="login_in" class="login_in">登录</span>
+			</div>
+		</div>		
+	</div>
+	<div class="mainMenubox">
+		<div id="mainMenu">
+			<ul>
+				<li id="tab1" class="mainMenu_item tabselected " data-src="home.html">学堂首页</li>
+				<li id="tab2" class="mainMenu_item" data-src="courseBulletion.html">课程公告</li>
+				<li id="tab3" class="mainMenu_item" data-src="courseDownload.html">课件下载</li>
+				<li id="tab4" class="mainMenu_item" data-src="videoClass.html">视频教室</li>
+				<li id="tab5" class="mainMenu_item new" data-src="onlineList.html">在线测评</li>
+				<li id="tab6" class="mainMenu_item" data-src="interactivePlace.html">互动专区</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="main_container">
+	
+	</div>	
+	<div id="footer">
+		<p>XXXX省国家XXXXX主办 信息中心提供技术支持 XXXICP备XXXXXXX</p>
+		<p>版权所有：XXXXXXXXXX 地址：XXXXXXXXXX</p>
+		<p>copyright @www.XXXXX.gov.cn:All rights reserved</p>
+	</div>
+	<div class="login_alert" style="display:none">
+		<div class="user_title">纳税人</div>
+			<div id="div_login" class="login_input">
+				<div>
+						<label>用户名:</label>	
+						<!-- <div class="login_name"> -->
+						  <input type="text" name="username" class="login_name" id="username">
+						<!-- </div> -->
+				</div>
+				<div>
+						<label>密&nbsp;&nbsp; 码:  </label> 
+					<!-- 	<div class="login_password"> -->
+							<input type="password" name="password" class="login_password" id="password">
+							<!-- <OBJECT id ="securityPassword" classid="CLSID:04267FCA-18E7-4183-A13A-BE900C321D26" width=301 height=35 style="display: none;"></OBJECT> -->
+				</div>
+				<div class="btn_1">
+            	<span class="regest"><a>没有账号,<span class="blue">立即注册</span></a></span>
+            	<span id="search_btn" class="search_btn">登陆</span>
+            </div>
+			</div>
+			
+	</div>
+<!--index.html作为主页面加载所有公共的js库和css,其他内嵌的页面都不能加载相同的js库否则报错-->
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<script type="text/javascript" src="js/page.js"></script>
+	<script type="text/javascript" src="js/easyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/easyUI/locale/easyui-lang-zh_CN.js"></script>
+	<script>
+	$(function(){
+		$("#login_in").click(function(){
+				$.layer({
+				        type: 1,
+				        area:['320px','240px'],
+				        bgcolor: "#fff", //设置层背景色,
+				        title:false,
+				        shade:[0.5,"#000"],
+				        border:[10,1,'#cbdde7'],
+				        shadeClose:true,
+				        closeBtn:[0],
+				        page: {
+				            dom:$('.login_alert')//捕获的元素
+				        }
+				      
+			    });
+			})
+	})
+	</script>
+</body>
+</html>

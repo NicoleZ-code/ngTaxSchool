@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纳税人学堂-在线测评</title>
+</head>     
+<body>
+<div class="common_container onlinedetail">
+	<p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">在线测评</a></p>
+
+	<div class="rightquestions">
+		<div class="welcomeinfo">
+			<p>尊敬的<span class="studentname">何文辉</span>学员，你好！</p>
+		    <p class="wcontent">
+		    	欢迎进入 <span class="coursname">XXXXXX</span> 	课程能力测试，本试卷共<span class="qu_number">XXX </span>道题，总分<span class="sumscore">100</span>分。目前您已测试<span class="testcomplete_n">XXX </span>次，还有<span class="testlast_n">XXX </span>次测试机会，目前最好成绩<span class="bestscore">XXX </span>分！
+		    </p>
+		</div>
+		<div id="qubox"></div>
+		<div class="quactions">
+			<input type="button" id="btnfirst" class="btn gray" value="第一题"/>
+			<input type="button" id="btnpre" class="btn gray" value="上一题"/>
+			<input type="button" id="btnnext" class="btn" value="下一题"/>
+			<input type="button" id="btnlast" class="btn" value="最后一题"/>
+			<input type="button" id="btntestkey" class="btn" value="检测答案"/>
+			<input type="button" id="btnsubmit" class="btn" value="交卷"/>
+		</div>	
+	</div>	
+</div>
+
+<script type="text/javascript">
+		var qcomplete =[];
+		var qempty =[];
+		var nowIndex =0;
+		function questionsNum(i){
+			$("#questions .qu-item").eq(-1).show().addClass("now").siblings(".qu-item").hide().removeClass("now");
+			// debugger
+			alert(nowIndex)
+		}
+		function quEvents(){
+			$("#questions .qu-item:first").show().addClass("now");
+			$("#btnfirst").on("click",function(){
+				nowIndex=0;
+				questionsNum(nowIndex);
+			});
+			$("#btnlast").on("click",function(){
+				nowIndex=$(".qu-item").length-1;
+				questionsNum(nowIndex);
+			});
+			$("#btnpre").on("click",function(){
+				nowIndex--;
+				if(nowIndex>=0){
+					questionsNum(nowIndex);				
+				}
+			});
+			$("#btnnext").on("click",function(){
+				nowIndex++;
+				if(nowIndex<$(".qu-item").length){
+					questionsNum(nowIndex);
+				}
+			});
+			// $("#qubox").on("click","input[type='radio']",function(){
+			// 	qcomplete[$(this).parents(".qu-item").index()] = $(this).next().text();
+			// });
+			$("#btnsubmit").click(function(){
+				alert()
+				$.each(qcomplete,function(i,value){
+					if(value==0){
+						qempty.push(i);
+					}
+				});
+				if(qempty.length==0){
+					alert("还有XX题没完成！！")
+				}else{
+					alert("全部回答完毕，是否提交？")
+				}
+				
+			});	
+			$("#btntestkey").click(function(){
+				$(".rightquestions").load("oquestionskey.html",null,
+			        function(result, status, text){
+				        
+			    	}
+				);
+			});
+		}
+		function test(){
+
+			$("#btnpre").removeClass("gray");
+			$("#btnnext").removeClass("gray");
+		}
+	$(function() {
+		$.ajaxSetup({cache : false});
+		$("#qubox").load("oquestions.html",null,
+	        function(result, status, text){
+		        quEvents();
+		        $(".qu_number").html($(".qu-item").length)	
+	    	}
+		);
+		
+
+	});
+
+</script>
+</body>
+</html>

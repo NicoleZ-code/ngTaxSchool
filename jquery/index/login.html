@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>纳税人学堂-登录</title>
+      <link href="images/favicon.png" rel="shortcut icon">
+      <link rel="stylesheet" type="text/css" href="css/base.css"> 
+</head>
+<body>
+<div class="login">
+ <div class="login_top">
+ 	<span class="login_image">
+ 		<img src="images/login.png"  width="322" height="54" />
+ 	</span>
+ 	<span class="login_title">
+ 		用户登录
+ 	</span>
+ </div>
+ <div class="login_middle">
+    <div class="login_main">
+    	<div class="login_bgimages">
+    		<img src="images/login_bgimages.png"  width="621" height="431" />
+    	</div>
+    	<div class="login_box">
+    	   <div id="div_login" class="div_login">
+    	         <div class="title_login">
+    	           登录
+    	         </div>
+				   <div class="user_div username_div">
+						 <label>用户名：</label>	
+						  <input type="text" name="username" class="login_name" id="username">
+					</div>
+					<div class="user_div  password_div">
+						<label>密&nbsp;&nbsp; 码： </label> 
+						<input type="password" name="password" class="login_password" id="password">
+					</div>
+					<div style="clear:both"></div>
+					<div class="login_submit">
+						登录
+					</div>
+					<div class="remember">
+					<span class="forget_password newstyle"><a id="forgetPass">忘记密码？</a> </span>
+					<span class="forget_password regis"><a >立即注册</a></span>
+					
+				</div>
+				
+						
+				</div>
+    	
+        </div>
+
+    </div>
+   
+ 	
+ </div>
+
+
+	
+<div id="footer">
+	<p>XXXX省国家XXXXX主办 信息中心提供技术支持 XXXICP备XXXXXXX</p>
+	<p>版权所有：XXXXXXXXXX 地址：XXXXXXXXXX</p>
+	<p>copyright @www.XXXXX.gov.cn:All rights reserved</p>
+</div>
+ 
+  
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+    
+    $(function(){
+
+       $(".login_middle").css({"min-height":$(window).height()-$(".login_top").height()-$("#footer").height()-81});    
+    });
+    
+    $(window).resize(function(){
+     $(".login_middle").css({"min-height":$(window).height()-$(".login_top").height()-$("#footer").height()-81});  
+    });
+    $(".username_div #username,.password_div #password").on('focus',function(){
+			$(this).addClass('loginname_focus');
+		}).on('blur',function(){
+			$(this).removeClass('loginname_focus');
+		});
+  </script>
+
+ </body>
+</html>
