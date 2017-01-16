@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>纳税人学堂-视频教程</title>
+</head>
+<body>
+
+<div class="common_container videoClass">
+	<p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">视频教室</a>
+		<span id="search-options">
+			<!-- <span class="op-item">消费税<span class="op-close">X</span></span> -->
+		</span>
+	</p>
+	
+	<div class="left_container">
+<!-- 		<div class="topic">
+			<dl>
+				<dt><span class="img"></span>专题推荐</dt>
+				<dd>新手入门</dd>
+				<dd>软件入门教程</dd>
+			</dl>
+		</div> -->
+		<!--左侧菜单-->
+		<div class="leftmenu" id="videomenu">
+		</div>
+	</div>
+
+	<div class="center_container serachdiv_container">
+		<div class="searchdiv">
+			<div class="search-item">
+				<label>课程名称：</label>
+				<input type="text" class="searchtext">	
+         		<span class="search_btn">搜索</span>
+			</div>
+			<div class="search-item">
+				<label>授课时间：</label>
+				<input type="text"  id="datastart" class="easyui-datebox">
+           		<span class="to">至</span>
+          		<input type="text" id="dataend" class="easyui-datebox">
+			</div>
+			<div class="search-item">
+				<label>分类课程：</label>
+				<ul class="search-content">				    
+					<li>增值税</li>
+					<li>消费税</li>
+					<li>企业所得税</li>
+					<li>车辆购置税</li>
+					<li>进出口税收</li>
+					<li>非居民税收</li>
+					<li>代开申请</li>
+					<li>网络发票</li>
+					<li>其他</li>
+				</ul>
+			</div>
+			<div class="search-item">
+				<label>专题课程：</label>
+				<ul class="search-content">				    
+					<li>新办纳税人</li>
+					<li>营改增</li>
+					<li>小微企业税收优惠</li>
+					<li>电子税务局</li>
+				</ul>
+			</div>
+		</div>
+		<div class="searchdiv-fold open">收起搜索</div>
+		<div id="searchcontent">
+		</div>	
+		<div class="commonpage maxwidth570"></div>		
+	</div>	
+
+	<div class="right_container">
+		<!--视频列表-->	
+		<div id="videotabs" class="commontabs">
+			<div class="menus-item menus3">
+				<span class="sp1 active">最新视频</span>
+				<span class="sp2">最热视频</span>
+				<span class="sp3">推荐视频</span>
+			</div>
+			<div class="commonlist_container" id="videolists">
+				<div class="item" id="newestlist">
+				</div>
+				<div class="item" id="hotlist">
+				</div>
+				<div class="item" id="advicelist">
+				</div>
+			</div>
+		</div>
+
+	</div>				
+</div>	
+<script type="text/javascript" src="js/easyUI/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyUI/locale/easyui-lang-zh_CN.js"></script>
+
+
+<script type="text/javascript">
+$(function () {
+		tabs_init({
+			tabsId: "#videotabs",
+			menuItem: ".menus-item span",
+			menuClass: "active",
+			contentItem: ".commonlist_container .item",
+			eventType: "mouseenter",
+			callbackfn:null
+		});
+		     //右侧列表
+    $("#videotabs").tab({
+        tabList: ".videomenu span",  
+        tabContent: ".commonlist_container .item", 
+        tabOn:"active", 
+        action: "mouseover" 
+    });
+		//通用分页插件
+	    $(".commonpage").createPage({
+	        pageCount:106,//页数的总数
+	        pageSize:15,//每页10条记录
+	        current:1, //默认第一页
+	        position:"center",
+	        backFn:function(pageCurrent,pageSize,pageCount){
+	           
+	        }
+	    });
+	    $(".search-item:last").addClass("last");
+	    $(".search-item li").click(function(){
+	    	var str ="<span class='op-item'>"+$(this).html()+"<span class='op-close' onclick='empty();'>X</span></span>";
+	    	$("#search-options").html(str);
+	    	$(this).addClass("active").sblings().removeClass("active");
+	    });
+var leftmenujosn =[{
+				id:"leftmenu1",
+				name:"企业课堂",
+				menus:[{
+						sortname:"按征管分类",
+						submenus:[
+							{id:"", name:"登记", src:"urlxxxx"},
+							{id:"", name:"认定管理", src:"urlxxxx"},
+							{id:"", name:"发票", src:"urlxxxx"},
+							{id:"", name:"申报", src:"urlxxxx"},
+							{id:"", name:"税收优惠管理", src:"urlxxxx"},
+							{id:"", name:"其他", src:"urlxxxx"}
+						]
+					},{
+						sortname:"按税种分类",
+						submenus:[
+							{id:"", name:"增值税", src:"urlxxxx"},
+							{id:"", name:"企业所得税", src:"urlxxxx"},
+							{id:"", name:"消费税", src:"urlxxxx"},
+							{id:"", name:"车辆购置税", src:"urlxxxx"},
+							{id:"", name:"印花税", src:"urlxxxx"},
+							{id:"", name:"其他", src:"urlxxxx"}
+						]
+					}			
+				]
+			},{
+				id:"leftmenu2",
+				name:"个体户课堂",
+				menus:[{
+						sortname:"按征管分类",
+						submenus:[
+							{id:"", name:"登记", src:"urlxxxx"},
+							{id:"", name:"认定管理", src:"urlxxxx"},
+							{id:"", name:"发票", src:"urlxxxx"},
+							{id:"", name:"申报", src:"urlxxxx"},
+							{id:"", name:"税收优惠管理", src:"urlxxxx"},
+							{id:"", name:"其他", src:"urlxxxx"}
+						]
+					},{
+						sortname:"按税种分类",
+						submenus:[
+							{id:"", name:"增值税", src:"urlxxxx"},
+							{id:"", name:"企业所得税", src:"urlxxxx"}
+						]
+					}	
+				]
+			},{
+				id:"leftmenu3",
+				name:"其他",
+				menus:[{
+						sortname:"按征管分类",
+						submenus:[
+							{id:"", name:"登记", src:"urlxxxx"},
+							{id:"", name:"认定管理", src:"urlxxxx"},
+							{id:"", name:"发票", src:"urlxxxx"},
+							{id:"", name:"申报", src:"urlxxxx"},
+							{id:"", name:"税收优惠管理", src:"urlxxxx"},
+							{id:"", name:"其他", src:"urlxxxx"}
+						]
+					},{
+						sortname:"按税种分类",
+						submenus:[
+							{id:"", name:"增值税", src:"urlxxxx"},
+							{id:"", name:"企业所得税", src:"urlxxxx"},
+							{id:"", name:"消费税", src:"urlxxxx"},
+							{id:"", name:"车辆购置税", src:"urlxxxx"},
+							{id:"", name:"印花税", src:"urlxxxx"},
+							{id:"", name:"其他", src:"urlxxxx"}
+						]
+					}
+
+					
+				]
+			}		
+	];
+
+	videoMenusInit("#videomenu",leftmenujosn); /*视频课堂 左侧树菜单构建*/
+
+	$("#videomenu .menu-title").eq(0).trigger("click");
+
+	/*视频课堂 左侧树菜单点击*/
+    $("#videomenu").on("click",".menu-content dd",function(){
+        var src=$(this).attr("data-option");
+
+    }).eq(0).trigger("click");
+
+var searchcontentjosn =[{
+		id:"video01",
+		imgurl:"public/images/video01.jpg",
+		name:"小微企业最新优惠政策",
+		teacher:"钟宜静",
+		time:"5分钟",
+		dec:"了解最新政策、了解最新政策、了解最新政策、了解最新政策、了解最新政策、了解最新政策、了解最新政策、了解最新政策"
+	},{
+		id:"video02",
+		imgurl:"public/images/video02.jpg",
+		name:"个人所得税",
+		teacher:"钟宜静",
+		time:"5分钟",
+		dec:"了解最新政策"
+	},{
+		id:"video03",
+		imgurl:"public/images/video03.jpg",
+		name:"增值说纳税申报辅导",
+		teacher:"钟宜静",
+		time:"5分钟",
+		dec:"了解最新政策"
+	},{
+		id:"video01",
+		imgurl:"public/images/video01.jpg",
+		name:"小微企业最新优惠政策",
+		teacher:"钟宜静",
+		time:"5分钟",
+		dec:"了解最新政策"
+	},{
+		id:"video02",
+		imgurl:"public/images/video02.jpg",
+		name:"个人所得税",
+		teacher:"钟宜静",
+		time:"5分钟",
+		dec:"了解最新政策"
+	},{
+		id:"video03",
+		imgurl:"public/images/video03.jpg",
+		name:"增值说纳税申报辅导",
+		teacher:"钟宜静",
+		time:"5分钟",
+		dec:"了解最新政策"
+	}
+	
+	];
+	videosearchContentInit(searchcontentjosn); /*视频课堂 搜索内容构建*/
+
+	/*加载最新，最热，推荐视频列表*/
+
+		 commonlistInit({
+		 	targetId:"#newestlist",
+		 	josn:searchcontentjosn
+		 });
+		 commonlistInit({
+		 	targetId:"#hotlist",
+		 	josn:searchcontentjosn
+		 });
+		 commonlistInit({
+		 	targetId:"#advicelist",
+		 	josn:searchcontentjosn
+		 });
+});
+function empty(){
+	$("#search-options").empty();
+}
+</script>
+</body>
+</html>

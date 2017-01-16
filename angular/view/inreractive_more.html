@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>纳税人学堂-互动专区-更多页面</title>
+</head>
+<body>
+<div class="teract_container">
+
+<div class="tractmore">
+    <div class="common_container">
+		  <p class="position">当前位置:  <a class="back">互动专区>></a>互动专区-更多</p>
+	 </div>
+	<div class="tractmore_content"> 
+	   <div class="tractmore_list">
+	      <div class="leftmenu" id="tractmore_tree">
+	      
+	      </div>
+	       <div class="tractmore_main">
+	         <div class="tractmore_detail">
+	         	<div class="tract_title" id="tract_title"><span class="tex_name">增值税</span></div>
+	             <div class="tax_content" id="tax_content">
+	          <!--   <ul class="content">
+	            	<li>
+	            	  <span class="point"></span>
+	            	  <span class="tax_detail">煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？</span>
+	            	  <span class="tax_time">2015-12-09</span>
+
+	            	</li>
+
+
+	            </ul> -->
+	         	
+
+	         </div>
+
+	         </div>
+	         
+	         <div style="clear:both"></div>
+	         <div class="tax_bottom">
+	         	<span class="total">共78条记录，</span>
+	         	<span class="every_page">每页15条</span>
+	         	<span class="current">当前第1/14页</span>
+	         	<span class="home_page">首页</span>
+	         	<span class="pre_page">上一页</span>
+	         	<span class="next_page">下一页</span>
+	         	<span class="end_page">尾页</span>
+                <span class="skip_page">转到<select><option>1</option><option>2</option><option>3</option></select>页</span>
+	         </div>
+   	
+
+          </div>
+	   	
+	   </div>
+
+		
+	</div>
+   
+</div>
+<script type="text/javascript">
+var leftmenujson =[{
+				id:"leftmenu1",
+				name:"分类课程",
+				menus:[
+						{id:"", name:"增值税", src:"urlxxxx"},
+						{id:"", name:"消费税", src:"urlxxxx"},
+						{id:"", name:"企业所得税", src:"urlxxxx"},
+						{id:"", name:"车辆购置税", src:"urlxxxx"},
+						{id:"", name:"进出口税收", src:"urlxxxx"},
+						{id:"", name:"非居民税收", src:"urlxxxx"},
+						{id:"", name:"其他", src:"urlxxxx"}	
+						
+				]
+			},{
+				id:"leftmenu2",
+				name:"分类课程",
+				menus:[
+						{id:"", name:"新办纳税人", src:"urlxxxx"},
+						{id:"", name:"营改增", src:"urlxxxx"},
+						{id:"", name:"小微企业税收优惠", src:"urlxxxx"},
+						{id:"", name:"电子税务局", src:"urlxxxx"}
+					
+				]
+			}	
+	];
+	function videoTreesInit(json){
+		var str= '';
+		$.each(json,function(i,iv){
+               str +="<div class='menu-item' id='"+iv["id"]+"'>";
+               str +="<div class='menu-title'>";
+               str +="<span class='img img"+i+"'></span>";
+               str +="<span class='name'>"+iv["name"]+"</span>";
+               str +="<span class='menu-arrow'></span>";
+               str +="</div>"; 
+               str +="<div class='menu-content'>";  
+               $.each(iv["menus"],function(j,jv){
+                   str +="<dl>"
+                   str +="<dd data-option='"+jv["src"]+"'>"+jv["name"]+"</dd>";
+                   str +="</dl>"
+              });
+                str +="</div>";
+                str +="</div>";
+
+		 });
+		$("#tractmore_tree").html(str);
+
+	}
+
+   var contentjson = [
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
+   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"}];
+
+   function _init_content(contentjson){
+    	var _str = "";
+    	_str +="<ul class='content'>";
+    	  $.each(contentjson,function(j,jv){
+                   _str +="<li class='li_detail'>"
+                   _str +="<span class='point'></span>";
+                   _str +="<span class='tax_detail'>"+jv["content"]+"</span>";
+                   _str +="<span class='tax_time'>"+jv["time"]+"</span>";
+                   _str +="</li>";
+           });
+    	  _str +="</ul>";
+    	  $("#tax_content").html(_str);
+
+    }
+   $(function(){
+        videoTreesInit(leftmenujson); /*互动专区 左侧树菜单构建*/
+        $("#tractmore_tree").on("click",".menu-content dd",function(){
+           var _src  = $(this).attr("data-option");
+           var _name = $(this).context.innerHTML;
+           $("#tract_title").html(_name); 
+       }).eq(0).trigger("click");
+      
+       _init_content(contentjson);
+
+       $("#main_container").on("click","#tax_content .li_detail",function(){
+           $(".teract_container").load("inreractive_more_detail.html");
+       });
+       $(".back").click(function(){
+          $(".teract_container").load("interactivePlace.html");
+
+      });
+
+   });
+	
+	
+
+
+
+</script>
+</body>
+</html>
