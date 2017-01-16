@@ -6,7 +6,7 @@
  * 搜索项
  */
 var courseMoudle = angular.module('CourseBulletionModule',[]);
-courseMoudle.factory('searchService', ['$http','intFormat',function($http,intFormat) {
+courseMoudle.factory('searchService', ['$http',function($http) {
         var item = {
             "id":"",
             "imgurl":"",
@@ -66,11 +66,11 @@ courseMoudle.factory('searchService', ['$http','intFormat',function($http,intFor
         };
     }
 ])
-.filter('intFormat',function(_int){
-    //格式化字符串
-    if (_int<9) {
-        return "0"+(_int+1);
-    }else{
-        return (_int+1);
-    }
-})
+// .filter('intFormat',function(_int){
+//     //格式化字符串
+//     if (_int<9) {
+//         return "0"+(_int+1);
+//     }else{
+//         return (_int+1);
+//     }
+// })
