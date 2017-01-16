@@ -1,0 +1,33 @@
+<div class="headbox">
+	<div id="head">
+		<div class="logo"></div>
+		<div class="links"> 
+			<span><a ui-sref="register">注册</a></span>
+			<span>|</span>	
+			<span id="login_in" class="login_in">登录</span>
+		</div>
+	</div>		
+</div>
+<div class="mainMenubox">
+	<div id="mainMenu">
+		<ul>
+			<li ui-sref="index.home" ui-sref-active="active" ng-class="{ active: $state.is('index') }">学堂首页</li>
+			<li ui-sref="index.courseBulletion" ui-sref-active="active">课程公告</li>
+			<li ui-sref="index.courseDownload" ui-sref-active="active">课件下载</li>
+			<li ui-sref="index.videoClass" ui-sref-active="active">视频教室</li>
+			<li ui-sref="index.onlineList" ui-sref-active="active" class="new">在线测评</li>
+			<li ui-sref="index.interactivePlace" ui-sref-active="active">互动专区</li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="main_container" ui-view="main">
+
+</div>	
+
+<div id="footer">
+	<p>XXXX省国家XXXXX主办 信息中心提供技术支持 XXXICP备XXXXXXX</p>
+	<p>版权所有：XXXXXXXXXX 地址：XXXXXXXXXX</p>
+	<p>copyright @www.XXXXX.gov.cn:All rights reserved</p>
+</div>
