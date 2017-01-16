@@ -7,7 +7,8 @@ require.config({
 		'utils-service':'js/utils/utils-service',
 		'utils-directive':'js/utils/utils-directive',
 		'home.controller':'js/controller/home.controller',
-		'courseBulletion.controller':'js/controller/courseBulletion.controller'
+		'courseBulletion.controller':'js/controller/courseBulletion.controller',
+		'interactive.controller':'js/controller/interactive.controller'
 	},
 	waitSeconds: 0,
 	packages:[
@@ -20,7 +21,8 @@ require.config({
 		'utils-directive': {deps:['angular','angular-ui']},
 		'utils-service': {deps:['angular','angular-ui']},
 		'home.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
-		'courseBulletion.controller': {deps:['angular','angular-ui','utils-directive','utils-service']}
+		'courseBulletion.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
+		'interactive.controller': {deps:['angular','angular-ui','utils-directive','utils-service']}
 	}
 });
 
@@ -33,7 +35,8 @@ require([
 		'utils-service',
 		'utils-directive',
 		'home.controller',
-		'courseBulletion.controller'
+		'courseBulletion.controller',
+		'interactive.controller'
 		 ],
    function(angular){
 	   //手动启动ng-app
