@@ -10,8 +10,8 @@ homeModule.controller("homeBannerImg", function($scope, $http, $state, $statePar
 
 /*最新通知*/
 .controller("homeNewNotice",function($scope, $http, $state, $stateParams){
-	$http.get("../angular/data/homeNewNotice.json")
-    .success(function(data) {
+	$http.get("../angular/data/interactiveData.json")
+    .success(function(data) {  //data中的type:a代表最新通知
        $scope.list = data;
     });
 })
@@ -22,11 +22,11 @@ homeModule.controller("homeBannerImg", function($scope, $http, $state, $statePar
 	$scope.setCurrent = function(param){
 		$scope.data.current = param;
 	}
-	$http.get("../angular/data/homeData1.json")
+	$http.get("../angular/data/entityClassData.json")
 	.success(function(data){
 		$scope.data1 = data;
 	});
-	$http.get("../angular/data/homeData2.json")
+	$http.get("../angular/data/onlineClassData.json")
 	.success(function(data){
 		$scope.data2 = data;
 	});

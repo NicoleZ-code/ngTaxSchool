@@ -18,15 +18,15 @@
 				<div class="base_information">
 					  <ul class="tab" id="tab_1">
 						<li class="hover_1">最新通知</li>
-						<li class="more"><a>更多>> </a></li>
+						<li class="more"><a>更多>></a></li>
 					</ul>
 				</div>
 				<div class="tab_content1">
 					<div class="tab_content_item">
 						<dl ng-controller="homeNewNotice">
-							<dt ng-repeat="item in list">
-								<span class="number" ng-class="{new:item.isNew,gray:!item.isNew}">{{item.num}}</span>
-								{{item.con}}
+							<dt ng-repeat="item in list | filter:{type:'a'} | limitTo:8">
+								<span class="number" ng-class="{new:item.isNew,gray:!item.isNew}">{{$index+1}}</span>
+								{{item.title}}
 							</dt>
 						</dl>
 					</div>
@@ -41,7 +41,7 @@
 						<li ng-class="{'hover_1':data.current == 1}" ng-mouseenter="setCurrent(1)">实体课程推荐</li>
 						<li ng-class="{'hover_1':data.current == 2}" ng-mouseenter="setCurrent(2)">网络课程推荐</li>
 					  </ul>
-					  <span class="more_inf"><a>更多>> </a></span>
+					  <span class="more_inf"><a>更多>></a></span>
 				</div>
 				<div class="tab_content">
 					<div class="tab_content_item rank" ng-if="data.current == 1">
