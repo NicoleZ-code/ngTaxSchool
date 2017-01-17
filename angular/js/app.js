@@ -85,7 +85,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 
             }
         })        
-
+        .state('index.interactivePlacemore', {
+            url: '^/interactivePlace/more',
+            views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+                'main@index': {
+                    templateUrl: 'view/interactive_more.html'
+                } 
+                
+            }
+        }) 
         // .state('register',{
         //     url:'/register',
         //     templateUrl: 'view/register.html'

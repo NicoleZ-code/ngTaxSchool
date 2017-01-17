@@ -430,7 +430,7 @@ body {
   background: #efefef;
   position: absolute;
   height: 100%;
-  top：0;
+  topÃ¯Â¼Å¡0;
   z-index: 100;
 
 }
@@ -995,7 +995,7 @@ position: relative;
 }
 /*commmon css-end*/
 
-/*课程公告*/
+/*Ã¨Â¯Â¾Ã§Â¨â€¹Ã¥â€¦Â¬Ã¥â€˜Å */
 .course_container .course_search{
   width: 100%;
   color:#322723;
@@ -1236,7 +1236,14 @@ position: relative;
   left: 200px;
   font-size: 14px;
   color: #333;
-  white-space: nowrap;  word-wrap: normal;  overflow: hidden;  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+#coursecontent li .cousrsetitle:hover{
+  color: #0f68ac;
 }
 #coursecontent li .unit{
   top: 24px;
@@ -1453,8 +1460,8 @@ position: relative;
 #coursecontent.table li .fullinfo{
   display: none;
 }
-/*课程公告-end*/
-/*课件下载-start*/
+/*Ã¨Â¯Â¾Ã§Â¨â€¹Ã¥â€¦Â¬Ã¥â€˜Å -end*/
+/*Ã¨Â¯Â¾Ã¤Â»Â¶Ã¤Â¸â€¹Ã¨Â½Â½-start*/
 #coursecontent li .downloadnum1{
   bottom: 10px;
   left: 200px;
@@ -1527,9 +1534,9 @@ position: relative;
   position: absolute;
   cursor: pointer;
 }
-/*课件下载-end*/
+/*Ã¨Â¯Â¾Ã¤Â»Â¶Ã¤Â¸â€¹Ã¨Â½Â½-end*/
 
-/*课程详情*/
+/*Ã¨Â¯Â¾Ã§Â¨â€¹Ã¨Â¯Â¦Ã¦Æ’â€¦*/
 .coursdetail_content{
   width: 780px;
   overflow: hidden;
@@ -1612,18 +1619,13 @@ position: relative;
   width: 100%;
   background: #fff;
 }
-.detail_table td{
-
-  line-height: 40px;
-  text-align: right;
-}
+.detail_table td{line-height: 20px;padding: 10px 0;text-align: right;}
 .detail_table  .detail_content{
   text-align: left;
   padding-left: 15px;
 }
 .detail_table  .detail_content.moreinfo{
  /* height: 90px;*/
-  line-height: 25px;
 }
 .download_info{
   cursor: pointer;
@@ -1651,6 +1653,7 @@ position: relative;
 }
 .coursdetail_head{
   margin-bottom: 20px;
+  overflow: hidden;
 }
 .apply_table_title{
   height: 40px;
@@ -1666,7 +1669,7 @@ position: relative;
   border-top: 2px solid #1168ad;
   border-right: 1px solid #d3d3d3;
 }
-/*互动评价*/
+/*Ã¤Âºâ€™Ã¥Å Â¨Ã¨Â¯â€žÃ¤Â»Â·*/
 .teract_container{
   width: 100%;
   overflow: hidden;
@@ -1767,7 +1770,7 @@ position: relative;
 }
 
 
- /*视频教程-start*/
+ /*Ã¨Â§â€ Ã©Â¢â€˜Ã¦â€¢â„¢Ã§Â¨â€¹-start*/
 .videoClass .left_container,.tractmore_list .leftmenu{
   width: 200px;
   float: left;
@@ -2446,7 +2449,7 @@ position: relative;
   background-color: #FFA003;
 }
 /*onlineTest-end*/
-/*通用分页插件-start*/
+/*Ã©â‚¬Å¡Ã§â€Â¨Ã¥Ë†â€ Ã©Â¡ÂµÃ¦Ââ€™Ã¤Â»Â¶-start*/
 .commonpage {
     padding: 0;
     text-align: left;
@@ -2525,9 +2528,9 @@ position: relative;
     background: url(../images/icon-course.png) no-repeat 0 -281px; 
 }
 
-/*公共分页插件-end*/
+/*Ã¥â€¦Â¬Ã¥â€¦Â±Ã¥Ë†â€ Ã©Â¡ÂµÃ¦Ââ€™Ã¤Â»Â¶-end*/
 
-/*互动专区*/
+/*Ã¤Âºâ€™Ã¥Å Â¨Ã¤Â¸â€œÃ¥Å’Âº*/
 .tractmore_main{
   margin-left: 20px;
   float: left;
@@ -2640,7 +2643,7 @@ position: relative;
   margin-right: 20px;
   color: #3A2D27;
 }
-/*专区详情*/
+/*Ã¤Â¸â€œÃ¥Å’ÂºÃ¨Â¯Â¦Ã¦Æ’â€¦*/
 .detail_main{
   width: 998px;
   background: #fff;
@@ -2697,7 +2700,7 @@ position: relative;
   top:0px;
   cursor: pointer;
 }
-/*互动专区最新问题*/
+/*Ã¤Âºâ€™Ã¥Å Â¨Ã¤Â¸â€œÃ¥Å’ÂºÃ¦Å“â‚¬Ã¦â€“Â°Ã©â€”Â®Ã©Â¢Ëœ*/
 .leftmenu .newsuestion_title{
    height: 40px;
    line-height: 40px;
@@ -2734,7 +2737,7 @@ position: relative;
 .newsuestion_content i.first{
   background: #DD5519;
 }
-/*登录页面*/
+/*Ã§â„¢Â»Ã¥Â½â€¢Ã©Â¡ÂµÃ©ÂÂ¢*/
 .login{
   width: 100%;
   overflow-y:hidden;
