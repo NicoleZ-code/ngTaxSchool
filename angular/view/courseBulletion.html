@@ -99,8 +99,8 @@
        <div class="commonlist_container" >
           <div id="new_course" class="item">
              <ul ng-controller="courseListCtl">
-                  <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list">     
-                      <span class='single'><em class='num'>{{$index}}<!--|filter:intFormat--></em>{{item.name}}</span> 
+                  <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list | filter : {teacher : ''}">     
+                      <span class='single'><em class='num'>{{$index+1}}<!--|filter:intFormat--></em>{{item.name}}</span> 
                       <span class='detail'>
                           <span class='videoimg'><img ng-src='{{item.imgurl}}' alt='{{item.imgurl}}'></span>
                           <dl>
@@ -115,7 +115,7 @@
           <div id="recommend_cousrse" class="item">
               <ul ng-controller="recommendCourseCtl">
                   <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list">     
-                      <span class='single'><em class='num'>{{$index}}</em>{{item.name}}</span> 
+                      <span class='single'><em class='num'>{{$index+1}}</em>{{item.name}}</span> 
                       <span class='detail'>
                           <span class='videoimg'><img ng-src='{{item.imgurl}}' alt='{{item.imgurl}}'></span>
                           <dl>
