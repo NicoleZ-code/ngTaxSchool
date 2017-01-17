@@ -8,12 +8,12 @@
 				<a class='note'>
 				   <span class="note_icon"></span>最新公告
 				</a>
-				<a class="note_more">更多>></a>
+				<a class="note_more" ui-serf="interactivemore">更多>></a>
 			</div>
 			<div class="teract_content_main">
-				<div class="teract_content" ng-repeat="item in data1">
+				<div class="teract_content" ng-repeat="item in datas | filter:{type:'a'} | limitTo:3">
 					<p class="teract_content_title">
-						<span class="teract_number">{{item.num}}</span>
+						<span class="teract_number">{{$index+1}}</span>
 						{{item.title}}
 					</p>
 					<div class="teract_content_detail">
@@ -28,9 +28,9 @@
 			 	<a class="new_question">更多>></a>
 		 	</div>
 		    <div class="teract_content_main">
-				<div class="teract_content" ng-repeat="item in data2">
+				<div class="teract_content" ng-repeat="item in datas | filter:{type:'b'} | limitTo:2">
 					<p class="teract_content_title">
-						<span class="teract_number">{{item.num}}</span>
+						<span class="teract_number">{{$index+1}}</span>
 						{{item.title}}
 					</p>
 					<div class="teract_content_detail">
@@ -47,9 +47,9 @@
 				<a class="note_more">更多>></a>
 			</div>
 			<div class="teract_content_main">
-				<div class="teract_content" ng-repeat="item in data3">
+				<div class="teract_content" ng-repeat="item in datas | filter:{type:'c'} | limitTo:3">
 					<p class="teract_content_title">
-						<span class="teract_number">{{item.num}}</span>
+						<span class="teract_number">{{$index+1}}</span>
 						{{item.title}}
 					</p>
 					<div class="teract_content_detail">
@@ -64,9 +64,9 @@
 			 	<a class="new_question">更多>></a>
 		 	</div>
 		    <div class="teract_content_main">
-				<div class="teract_content" ng-repeat="item in data4">
+				<div class="teract_content" ng-repeat="item in datas | filter:{type:'d'} | limitTo:2">
 					<p class="teract_content_title">
-						<span class="teract_number">{{item.num}}</span>
+						<span class="teract_number">{{$index+1}}</span>
 						{{item.title}}
 					</p>
 					<div class="teract_content_detail">
@@ -81,11 +81,11 @@
    
    //更多信息
   $(".note_more").click(function(){
-     $(".teract_container").load("inreractive_more.html");
+     $(".teract_container").load("interactive_more.html");
 
   });
   $(".new_question").click(function(){
-     $(".teract_container").load("new_question.html");
+     $(".teract_container").load("interactive_new_question.html");
 
   });
 
