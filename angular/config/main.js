@@ -3,7 +3,6 @@ require.config({
 	paths:{ //bind-once
 		'angular':'libs/angular-1.3.0.14/angular',
         'angular-ui':'libs/angular-ui-router',
-        'moment':'libs/moment.min.js',
 		'app':'js/app',
 		'utils-service':'js/utils/utils-service',
 		'utils-directive':'js/utils/utils-directive',
