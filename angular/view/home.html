@@ -8,17 +8,10 @@
 	<div class="index_content">
 		<div class="inform">
 			<div class="video">
-					<div id="kinMaxShow">
+					<div id="kinMaxShow" ng-controller="homeBannerImg">
 	 				<div>
-	        			<a href="#"><img src="public/images/video.png"   /></a>
+	        			<a href="#"><img ng-src="{{src}}"/></a>
 	       			</div>
-					<div>
-	        			<a href="#"><img src="public/images/video_1.png"  /></a>
-	        		</div>
-	 				<div>
-	        			<a href="#"><img src="public/images/video_2.png"   /></a>
-	        		</div>
-	        		
 				</div>
 			</div>
 			<div class="question">
@@ -30,306 +23,63 @@
 				</div>
 				<div class="tab_content1">
 					<div class="tab_content_item">
-						<dl>
-								<dt><span class="number new">1</span>“营改增及融资租赁行业税收讲解”视频直播培训公告</dt>
-								<dt><span class="number new">2</span>国家税务总局关于发布《减免税政策代码目录》的公告</dt>
-								<dt><span class="number new">3</span>“增值税一般纳税人资格登记”视频课程发布公告</dt>
-								<dt><span class="number new">4</span>“营改增及融资租赁行业税收讲解”视频直播培训公告</dt>
-								<dt><span class="number gray">5</span>国家税务总局关于发布《减免税政策代码目录》的公告</dt>
-								<dt><span class="number gray">6</span>“增值税一般纳税人资格登记”视频课程发布公告</dt>
-								<dt><span class="number gray">7</span>国家税务总局关于发布《减免税政策代码目录》的公告</dt>
-								<dt><span class="number gray">8</span>“增值税一般纳税人资格登记”视频课程发布公告</dt>
-								
+						<dl ng-controller="homeNewNotice">
+							<dt ng-repeat="item in list">
+								<span class="number" ng-class="{new:item.isNew,gray:!item.isNew}">{{item.num}}</span>
+								{{item.con}}
+							</dt>
 						</dl>
-					
 					</div>
-					
 				</div>
 			</div>
 			<div style="clear:both"></div>
 		</div>
-		<div class="course">
+		<div class="course" ng-controller="homeCourseRecommend">
 			<div class="question question_1">
 				<div class="base_information">
 					  <ul class="tab" id="tab_1">
-						<li class="">实体课程推荐</li>
-						<li class="">网络课程推荐</li>
+						<li ng-class="{'hover_1':data.current == 1}" ng-mouseenter="setCurrent(1)">实体课程推荐</li>
+						<li ng-class="{'hover_1':data.current == 2}" ng-mouseenter="setCurrent(2)">网络课程推荐</li>
 					  </ul>
 					  <span class="more_inf"><a>更多>> </a></span>
 				</div>
 				<div class="tab_content">
-					<div class="tab_content_item rank">
+					<div class="tab_content_item rank" ng-if="data.current == 1">
 						<ul>
-							<li>
-								<a class="hover">
+							<li ng-repeat="item in data1">
+								<a ng-class="{'hover':item.isHover}">
 									<div class="simple">
-										<span class="no">01</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
+										<span class="no">{{item.num}}</span>
+										<span class="title_1 tx_unbr">{{item.title}}</span>
+										<span class="learn">{{item.date}}</span>
 									</div>
 									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
+										<div class="pic">
+											<img ng-src="{{item.src}}">
 										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a > 
-									<div class="simple">
-										<span class="no">02</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语 
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">03</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语 
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">04</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语 
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">05</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">06</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">07</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">08</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">09</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语 
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">10</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">11</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a>
-									<div class="simple">
-										<span class="no">12</span>
-										<span class="title_1 tx_unbr">AutoCAD 2016全面精通与精华实例视频教程（中文版）</span>
-										<span class="learn">南京鼓楼分局 2015-11-12</span>
-									</div>
-									<div class="detail">
-										<div class="pic"><img src="public/images/icon-01.png">
-										</div>
-										<div class="intro tx_unbr"> 6个月从0学会英语
-										<span class="teacher">
-										<span class="teacher_icon"></span>龙飞虎<span class="time"></span> 2015-1-12 09:00<span class="sign_up">报名</span>
-										</span>
-										<span class="adress">授课地点：中山北路xx大厦 剩余名额：23</span>
+										<div class="intro tx_unbr">
+											{{item.title_1}}
+											<span class="teacher">
+												<span class="teacher_icon"></span>{{item.teacher}}
+												<span class="time"></span>{{item.time}}
+												<span class="sign_up">报名</span>
+											</span>
+											<span class="adress">{{item.address}}</span>
 										</div>
 									</div>
 								</a>
 							</li>
 						</ul>
-					
 					</div>
-					<div class="tab_content_item common_question">
+					<div class="tab_content_item common_question" ng-if="data.current == 2">
 						<ul>
-							<li>
-								<div class="pic pic1"><img src="public/images/pic-01.png"><span class="icon_show"></span></div>
+							<li ng-repeat="item in data2">
+								<div class="pic pic1" ng-mouseenter="iconShow = true" ng-mouseleave="iconShow = false"><img ng-src="{{item.src}}"><span class="icon_show" ng-show="iconShow"></span></div>
 								<div class="course_detial">
-									<p class="train">营改增及租赁行业培训</p>
-									<p><span>营改增</span></p>
-									<p>时长：30分钟</p>
-									<p>讲师：陈老师</p>
-								</div>
-								<div style="clear:both"></div>		
-							</li>
-							<li>
-								<div class="pic pic1"><img src="public/images/pic-02.png"><span class="icon_show"></span></div>
-								<div class="course_detial">
-									<p class="train">营改增及租赁行业培训</p>
-									<p><span>营改增</span></p>
-									<p>时长：30分钟</p>
-									<p>讲师：陈老师</p>
-								</div>
-								<div style="clear:both"></div>		
-							</li>
-							<li>
-								<div class="pic pic1"><img src="public/images/pic-03.png"><span class="icon_show"></span></div>
-								<div class="course_detial">
-									<p class="train">营改增及租赁行业培训</p>
-									<p><span>营改增</span></p>
-									<p>时长：30分钟</p>
-									<p>讲师：陈老师</p>
-								</div>
-								<div style="clear:both"></div>		
-							</li>
-							<li>
-								<div class="pic pic1"><img src="public/images/pic-01.png"><span class="icon_show"></span></div>
-								<div class="course_detial">
-									<p class="train">营改增及租赁行业培训</p>
-									<p><span>营改增</span></p>
-									<p>时长：30分钟</p>
-									<p>讲师：陈老师</p>
+									<p class="train">{{item.title}}</p>
+									<p><span>{{item.type}}</span></p>
+									<p>{{item.time}}</p>
+									<p>{{item.teacher}}</p>
 								</div>
 								<div style="clear:both"></div>		
 							</li>
@@ -452,25 +202,6 @@
  <script type="text/javascript" src="js/time.js"></script>
 <script type="text/javascript">
 $(function () {
-	 time("idCalendar","idCalendarPre","idCalendarNext");
-		$(".question_1").tab({
-			tabList: "#tab_1 li",  
-			tabContent: ".tab_content .tab_content_item", 
-			tabOn:"hover_1", 
-			action: "mouseover" 
-		});
-		/*  头部图片轮播*/
-		 $("#kinMaxShow").kinMaxShow({
-		      height:328,
-		      intervalTime:2,
-		      button:{
-		          showIndex:false,
-		          normal:{background:'url(public/images/button_2.png)',width:'11px',height:'11px',marginRight:'8px',border:'0',right:'4%',bottom:'15px'},
-		          focus:{background:'url(public/images/button_1.png)',border:'0'}
-		        }
-		        
-		      });
-  /*  头部图片轮播end*/
 	  	$(".right_menu ul li span").hover(function(){
 	  		$(this).parent("li").siblings().find("span").html("");
 	  		$(this).parent("li").siblings().find("span").removeClass("backg");
