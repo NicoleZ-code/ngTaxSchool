@@ -1863,7 +1863,7 @@ position: relative;
   background: url(../images/icons_video.png) no-repeat -120px -69px;
 }
 .leftmenu .menu-item .menu-content{
-    display: none;
+    /* display: none; */
 }
 .leftmenu .menu-item .menu-content dt{
     width: 50%;
@@ -1872,8 +1872,8 @@ position: relative;
     color: rgb(64, 134, 186);
 }
 .leftmenu .menu-item .menu-content dd{
-    width: 60%;
-    padding: 0 20%;
+    width: 64%;
+    padding: 0 18%;
     line-height: 25px; 
     cursor: pointer;
     background: url(../images/icons_video.png) no-repeat -129px -176px;

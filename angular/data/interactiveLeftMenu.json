@@ -1,0 +1,22 @@
+[{
+	"id":"leftmenu1",
+	"name":"分类课程",
+	"menus":[
+			{"id":"", "name":"增值税", "src":"urlxxxx"},
+			{"id":"", "name":"消费税", "src":"urlxxxx"},
+			{"id":"", "name":"企业所得税", "src":"urlxxxx"},
+			{"id":"", "name":"车辆购置税", "src":"urlxxxx"},
+			{"id":"", "name":"进出口税收", "src":"urlxxxx"},
+			{"id":"", "name":"非居民税收", "src":"urlxxxx"},
+			{"id":"", "name":"其他", "src":"urlxxxx"}		
+	]
+},{
+	"id":"leftmenu2",
+	"name":"分类课程",
+	"menus":[
+			{"id":"", "name":"新办纳税人", "src":"urlxxxx"},
+			{"id":"", "name":"营改增", "src":"urlxxxx"},
+			{"id":"", "name":"小微企业税收优惠", "src":"urlxxxx"},
+			{"id":"", "name":"电子税务局", "src":"urlxxxx"}
+	]
+}]

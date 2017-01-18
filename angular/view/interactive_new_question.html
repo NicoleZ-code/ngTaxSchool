@@ -1,184 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>纳税人学堂-互动专区-更多页面</title>
-</head>
-<body>
 <div class="teract_container">
-
 <div class="tractmore newset_question">
     <div class="common_container">
-		  <p class="position">当前位置:  <a class="back">互动专区>></a>最新问题</p>
-	 </div>
-	<div class="tractmore_content"> 
-	   <div class="tractmore_list">
-	      
-	       <div class="tractmore_main">
-	         <div class="tractmore_detail">
-	         	<div class="tract_title" id="tract_title"><span class="tex_name">最热问题</span>
-
-                <div class="newest_search">
-                	<span class="search_box">
-                		<input type="text" >
-                	</span>
-                	<span class="search_images">
-                		<img src="public/images/newest_search.png" width="25" height="25">
-                	</span>
-
-                </div>
-                <div style="clear:both"> 	
-                </div>
-
-
-
-	         	</div>
-	             <div class="tax_content" id="tax_content">
-	             
-
-	              </div>
-	         </div>
-	         <div style="clear:both"></div>
-	         <div class="tax_bottom">
-	         	<span class="total">共78条记录，</span>
-	         	<span class="every_page">每页15条</span>
-	         	<span class="current">当前第1/14页</span>
-	         	<span class="home_page">首页</span>
-	         	<span class="pre_page">上一页</span>
-	         	<span class="next_page">下一页</span>
-	         	<span class="end_page">尾页</span>
-                <span class="skip_page">转到<select><option>1</option><option>2</option><option>3</option></select>页</span>
-	         </div>
-   	
-
-          </div>
-          <div class="leftmenu" id="tractmore_tree">
-	         <div class="newsuestion_title">
-	         	最新问题
-	         </div>
-	         <div class="newsuestion_content">
-	         	 <ul>
-	         	 	<li>
-	         	 	  <i class="first">1</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-	         	 	<li>
-	         	 	  <i class="first">2</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-	         	 	<li>
-	         	 	  <i class="first">3</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-	         	 	<li>
-	         	 	  <i >4</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-	         	 	<li>
-	         	 	  <i >5</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-	         	 	<li>
-	         	 	  <i >6</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-	         	 	<li>
-	         	 	  <i >7</i>	
-	         	 	  购买方收到红字发票是否需要认证？
-	         	 	</li>
-
-	         	 </ul>
-	         </div>
-	      </div>
-	   	
-	   </div>
-
-		
+		<p class="position">当前位置:  <a class="back" ui-sref="index.interactivePlace">互动专区>></a>最新问题</p>
 	</div>
-   
+	<div class="tractmore_content"> 
+	   	<div class="tractmore_list" ng-controller="interactiveQuestionCtrl">
+	       	<div class="tractmore_main">
+				<div class="tractmore_detail">
+					<div class="tract_title" id="tract_title"><span class="tex_name">最热问题</span>
+						<div class="newest_search">
+							<span class="search_box">
+								<input type="text" >
+							</span>
+							<span class="search_images">
+								<img src="public/images/newest_search.png" width="25" height="25">
+							</span>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				 	<div class="tax_content" id="tax_content">
+						<ul class="content">
+				        	<li class="li_detail" ui-sref="index.interactivePlace.more.detail({courseId:item.id})" ng-repeat="item in data1 | limitTo:15">
+				        	  <span class="point"></span>
+				        	  <span class="tax_detail">{{item.title}}</span>
+				        	  <span class="tax_time">{{item.time}}</span>
+				        	</li>
+				        </ul>
+				  	</div>
+				</div>
+	         	<div style="clear:both"></div>
+				<div class="tax_bottom">
+					<span class="total">共78条记录，</span>
+					<span class="every_page">每页15条</span>
+					<span class="current">当前第1/14页</span>
+					<span class="home_page">首页</span>
+					<span class="pre_page">上一页</span>
+					<span class="next_page">下一页</span>
+					<span class="end_page">尾页</span>
+					<span class="skip_page">转到<select><option>1</option><option>2</option><option>3</option></select>页</span>
+				</div>
+          	</div>
+			<div class="leftmenu" id="tractmore_tree">
+			 	<div class="newsuestion_title">最新问题</div>
+				<div class="newsuestion_content">
+				 	<ul>
+					 	<li ng-repeat="item in data2 | limitTo:7">
+					 	  <i ng-class="{'first':item.isNew}">{{$index+1}}</i>	
+					 	  {{item.title}}
+					 	</li>
+				 	</ul>
+				</div>
+			</div>
+	    </div>
+	</div>
 </div>
-<script type="text/javascript">
-var leftmenujson =[{
-				id:"leftmenu1",
-				name:"分类课程",
-				menus:[
-						{id:"", name:"增值税", src:"urlxxxx"},
-						{id:"", name:"消费税", src:"urlxxxx"},
-						{id:"", name:"企业所得税", src:"urlxxxx"},
-						{id:"", name:"车辆购置税", src:"urlxxxx"},
-						{id:"", name:"进出口税收", src:"urlxxxx"},
-						{id:"", name:"非居民税收", src:"urlxxxx"},
-						{id:"", name:"其他", src:"urlxxxx"}	
-						
-				]
-			},{
-				id:"leftmenu2",
-				name:"分类课程",
-				menus:[
-						{id:"", name:"新办纳税人", src:"urlxxxx"},
-						{id:"", name:"营改增", src:"urlxxxx"},
-						{id:"", name:"小微企业税收优惠", src:"urlxxxx"},
-						{id:"", name:"电子税务局", src:"urlxxxx"}
-					
-				]
-			}	
-	];
-
-
-   var contentjson = [
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"},
-   {content:"煤炭采掘企业购进巷道附属设备，其进项税能不能抵扣？", time:"2015-12-09"}];
-
-   function _init_content(contentjson){
-    	var _str = "";
-    	_str +="<ul class='content'>";
-    	  $.each(contentjson,function(j,jv){
-                   _str +="<li class='li_detail'>"
-                   _str +="<span class='point'></span>";
-                   _str +="<span class='tax_detail'>"+jv["content"]+"</span>";
-                   _str +="<span class='tax_time'>"+jv["time"]+"</span>";
-                   _str +="</li>";
-           });
-    	  _str +="</ul>";
-    	  $("#tax_content").html(_str);
-
-    }
-   $(function(){
-       
-        $("#tractmore_tree").on("click",".menu-content dd",function(){
-           var _src  = $(this).attr("data-option");
-           var _name = $(this).context.innerHTML;
-           $("#tract_title").html(_name); 
-       }).eq(0).trigger("click");
-      
-       _init_content(contentjson);
-
-       $("#main_container").on("click","#tax_content .li_detail",function(){
-           $(".teract_container").load("inreractive_more_detail.html");
-       });
-       $(".back").click(function(){
-          $(".teract_container").load("interactivePlace.html");
-
-      });
-
-   });
-	
-	
-
-
-
-</script>
-</body>
-</html>
+</div>
