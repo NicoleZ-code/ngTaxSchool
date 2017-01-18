@@ -34,6 +34,13 @@ courseMoudle.controller('courseCtl',function($scope, $http, $state, $stateParams
 /**
  * 推荐课程
  */
-.controller('recommendCourseCtl',function($scope,$http,$state,$stateParams){
-
+.controller('recommendCourseCtl',function($scope,$http,$state,$stateParams,searchService){
+    $scope.isList = true;
+    $scope.list =  searchService.init() ;
+    // console.log(searchService.init(),$scope.list) //多一个length
+    searchService.getAllItems('data/course.json')
+         .success(function(data){
+             $scope.list = data;
+             $scope.list["isShow"] = true;
+         })
 })

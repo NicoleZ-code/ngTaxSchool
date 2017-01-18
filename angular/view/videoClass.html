@@ -68,9 +68,64 @@
 		</div>	
 		<div class="commonpage maxwidth570"></div>		
 	</div>	
+        <tabs>
 
-	<div class="right_container">
-		<!--视频列表-->	
+
+            <pane title="最新视频">
+                <ul ng-controller="courseListCtl">
+                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                        <hoveritem>
+                            <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
+                            <detail>
+                                <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                                <dl>
+                                    <dd class="name">{{item.name}}</dd>
+                                    <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                                    <dd class="time">时长 : {{item.time}}</dd>
+                                </dl>    
+                            </detail> 
+                        </hoveritem>
+                    </li>
+                </ul>
+            </pane>
+            <pane title="最热视频">
+                <ul ng-controller="recommendCourseCtl">
+                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                        <hoveritem>
+                            <single><em class="num">{{$index+1}}</em>2-{{item.name}}</single>
+                            <detail>
+                                <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                                <dl>
+                                    <dd class="name">2-{{item.name}}</dd>
+                                    <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                                    <dd class="time">时长 : {{item.time}}</dd>
+                                </dl>    
+                            </detail> 
+                        </hoveritem>
+                    </li>
+                </ul>
+            </pane>
+			<pane title="推荐视频">
+                <ul ng-controller="recommendCourseCtl">
+                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                        <hoveritem>
+                            <single><em class="num">{{$index+1}}</em>3-{{item.name}}</single>
+                            <detail>
+                                <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                                <dl>
+                                    <dd class="name">2-{{item.name}}</dd>
+                                    <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                                    <dd class="time">时长 : {{item.time}}</dd>
+                                </dl>    
+                            </detail> 
+                        </hoveritem>
+                    </li>
+                </ul>
+            </pane>
+			
+        </tabs>
+	<!--<div class="right_container">
+
 		<div id="videotabs" class="commontabs">
 			<div class="menus-item menus3">
 				<span class="sp1 active">最新视频</span>
@@ -87,7 +142,7 @@
 			</div>
 		</div>
 
-	</div>				
+	</div>				-->
 </div>	
 <script type="text/javascript" src="js/easyUI/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="js/easyUI/locale/easyui-lang-zh_CN.js"></script>

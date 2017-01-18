@@ -430,9 +430,8 @@ body {
   background: #efefef;
   position: absolute;
   height: 100%;
-  topÃ¯Â¼Å¡0;
+  top:0px;
   z-index: 100;
-
 }
 .shdow_1{
   background-position: -40px -287px;
@@ -995,7 +994,7 @@ position: relative;
 }
 /*commmon css-end*/
 
-/*Ã¨Â¯Â¾Ã§Â¨â€¹Ã¥â€¦Â¬Ã¥â€˜Å */
+
 .course_container .course_search{
   width: 100%;
   color:#322723;
@@ -1460,8 +1459,7 @@ position: relative;
 #coursecontent.table li .fullinfo{
   display: none;
 }
-/*Ã¨Â¯Â¾Ã§Â¨â€¹Ã¥â€¦Â¬Ã¥â€˜Å -end*/
-/*Ã¨Â¯Â¾Ã¤Â»Â¶Ã¤Â¸â€¹Ã¨Â½Â½-start*/
+
 #coursecontent li .downloadnum1{
   bottom: 10px;
   left: 200px;
@@ -1534,9 +1532,7 @@ position: relative;
   position: absolute;
   cursor: pointer;
 }
-/*Ã¨Â¯Â¾Ã¤Â»Â¶Ã¤Â¸â€¹Ã¨Â½Â½-end*/
 
-/*Ã¨Â¯Â¾Ã§Â¨â€¹Ã¨Â¯Â¦Ã¦Æ’â€¦*/
 .coursdetail_content{
   width: 780px;
   overflow: hidden;
@@ -1669,7 +1665,7 @@ position: relative;
   border-top: 2px solid #1168ad;
   border-right: 1px solid #d3d3d3;
 }
-/*Ã¤Âºâ€™Ã¥Å Â¨Ã¨Â¯â€žÃ¤Â»Â·*/
+
 .teract_container{
   width: 100%;
   overflow: hidden;
@@ -1770,7 +1766,7 @@ position: relative;
 }
 
 
- /*Ã¨Â§â€ Ã©Â¢â€˜Ã¦â€¢â„¢Ã§Â¨â€¹-start*/
+
 .videoClass .left_container,.tractmore_list .leftmenu{
   width: 200px;
   float: left;
@@ -2130,13 +2126,13 @@ position: relative;
   float: right;
   border: 1px solid #DDDDDD;
 }
-.commontabs .menus-item {
+.commontabs .nav-tabs{
     overflow: hidden;
     /* margin-bottom: 30px; */
     clear: both;
     border-bottom: 1px solid #DDD;
 }
-.commontabs .menus-item span{
+.commontabs .nav-tabs li{
     width: 60px;
     margin: 0 2px;
     height: 40px;
@@ -2147,28 +2143,40 @@ position: relative;
     cursor: pointer;
     font-size: 13px;
 }
-.commontabs .menus-item.menus2 span{
+.commontabs .nav-tabs.menus2 li{
     width: 50%;
     margin: 0px;
     font-size: 14px;
 }
-.commontabs .menus-item span.active{
+.commontabs .nav-tabs li.active{
     border-bottom: none;
     border-bottom: 2px solid #0F68AC;
     height: 39px;
     color: #0F68AC;
 }
 
-.commonlist_container{
+.commontabs .tab-content{
   clear: both;
   margin-top: -1px;
 }
-.commonlist_container ul li{
+.commontabs .tab-content .tab-pane{
+  display:none;
+}
+.commontabs .tab-content .tab-pane.active{
+  display:block;
+}
+.tab-content ul li{
     text-align: center;
     overflow: hidden;
     cursor: pointer;
 }
-.commonlist_container ul li .single{
+.tab-content ul li .isDetail .detail{
+  display:block;
+}
+.tab-content ul li .isDetail .single{
+  display:none;
+}
+.tab-content ul li .single{
     margin: 0px 10px;
     display: block;
     text-align: left;
@@ -2178,7 +2186,7 @@ position: relative;
     white-space: nowrap;  word-wrap: normal;  overflow: hidden;  text-overflow: ellipsis;
     cursor: pointer;
 }
-.commonlist_container ul li .single .num{
+.tab-content ul li .single .num{
   font-style: normal;
   background-color: #4DA9FD;
   font-size: 12px;
@@ -2190,14 +2198,15 @@ position: relative;
   line-height: 20px;
   vertical-align: middle;
 }
-.commonlist_container ul li .detail{
+.tab-content ul li .detail{
     display: block;
     background-color: #eee;
     overflow: hidden;
     text-indent: 0px;
     text-align: left;
+    display:none;
 }
-.commonlist_container .videoimg {
+.tab-content .videoimg {
     width: 88px;
     height: 60px;
     margin-right: 10px;
@@ -2205,15 +2214,15 @@ position: relative;
     float: left;
     text-indent: 0px;
 }
-.commonlist_container .videoimg img{
+.tab-content .videoimg img{
     width: 88px;
     height: 60px;
 }
-.commonlist_container ul li .detail dl{
+.tab-content ul li .detail dl{
     display: block;
     float: left;
 }
-.commonlist_container ul li .detail dd{
+.tab-content ul li .detail dd{
     display: block;
     width: 95px;
     line-height: 17px;
@@ -2224,7 +2233,7 @@ position: relative;
     font-size: 12px;
     color: #8E8D8D;
 }
-.commonlist_container ul li .detail dd.name{
+.tab-content ul li .detail dd.name{
     line-height: 25px; 
     font-size: 14px;
     color: #333;
@@ -2449,7 +2458,7 @@ position: relative;
   background-color: #FFA003;
 }
 /*onlineTest-end*/
-/*Ã©â‚¬Å¡Ã§â€Â¨Ã¥Ë†â€ Ã©Â¡ÂµÃ¦Ââ€™Ã¤Â»Â¶-start*/
+
 .commonpage {
     padding: 0;
     text-align: left;
@@ -2528,9 +2537,7 @@ position: relative;
     background: url(../images/icon-course.png) no-repeat 0 -281px; 
 }
 
-/*Ã¥â€¦Â¬Ã¥â€¦Â±Ã¥Ë†â€ Ã©Â¡ÂµÃ¦Ââ€™Ã¤Â»Â¶-end*/
 
-/*Ã¤Âºâ€™Ã¥Å Â¨Ã¤Â¸â€œÃ¥Å’Âº*/
 .tractmore_main{
   margin-left: 20px;
   float: left;
@@ -2643,7 +2650,7 @@ position: relative;
   margin-right: 20px;
   color: #3A2D27;
 }
-/*Ã¤Â¸â€œÃ¥Å’ÂºÃ¨Â¯Â¦Ã¦Æ’â€¦*/
+
 .detail_main{
   width: 998px;
   background: #fff;
@@ -2700,7 +2707,7 @@ position: relative;
   top:0px;
   cursor: pointer;
 }
-/*Ã¤Âºâ€™Ã¥Å Â¨Ã¤Â¸â€œÃ¥Å’ÂºÃ¦Å“â‚¬Ã¦â€“Â°Ã©â€”Â®Ã©Â¢Ëœ*/
+
 .leftmenu .newsuestion_title{
    height: 40px;
    line-height: 40px;
@@ -2737,7 +2744,7 @@ position: relative;
 .newsuestion_content i.first{
   background: #DD5519;
 }
-/*Ã§â„¢Â»Ã¥Â½â€¢Ã©Â¡ÂµÃ©ÂÂ¢*/
+
 .login{
   width: 100%;
   overflow-y:hidden;

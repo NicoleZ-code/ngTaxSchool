@@ -1,52 +1,88 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>纳税人学堂-课程公告</title>
-</head>
-<body>
 <div class="common_container" >
-  <div class="course_container" id="course_container">
+   <div class="course_container" id="course_container">
   		<p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">课堂公告</a>>>
           <span class="fork_detail">
             <span id="fork" class="fork">营改增</span><span class="fork_img"><img src="public/images/fork.png" width="10" height="10"/></span>
           </span>
        </p>
-  <div class="course_left">
-    	<div class="course_search">
-    	   <div class="course_top">
-    	       <div class="course_search1"> 
-    	       <label>课程名称：</label>
-    	       <input type="text" />
-             <span class='search_btn'>搜索</span>
-    	        </div>
-             <div class="course_search1"> 
-                <label class='time_label'>授课时间：</label>
-                <input type="text"  id="actionDate" class="easyui-datebox">
-                <label class="time_to">到</label>
-              <input type="text"  class="easyui-datebox">
+        <div class="course_left">
+            <div class="course_search">
+                <div class="course_top">
+                    <div class="course_search1"> 
+                    <label>课程名称：</label>
+                    <input type="text" />
+                    <span class='search_btn'>搜索</span>
+                        </div>
+                    <div class="course_search1"> 
+                        <label class='time_label'>授课时间：</label>
+                        <input type="text"  id="actionDate" class="easyui-datebox">
+                        <label class="time_to">到</label>
+                    <input type="text"  class="easyui-datebox">
+                    </div>
+                    <div class="single_change">
+                        <div class="course_search1 "> 
+                        <label class="class_course">分类课程：</label>
+                        <span class="course_name">增值税</span>
+                        <span class="course_name">消费税</span>
+                        <span class="course_name">企业所得税</span>
+                        <span class="course_name">车辆购置税</span>
+                        <span class="course_name">进出口税收</span>
+                        <span class="course_name">非居民税收</span>
+                        <span class="course_name">其他</span>
+                        </div>
+                        <div class="course_search1 course_searchlast "> 
+                        <label class="class_course">专题课程：</label>
+                        <span class="course_name">新办纳税人</span>
+                        <span class="course_name li_on">营改增</span>
+                        <span class="course_name">小微企业税收优惠</span>
+                        <span class="course_name">电子税务局</span>
+                        </div>
+                    </div>    	    
+                </div>
+                <div class="searchdiv-fold open">收起搜索</div>
+
+
+                <div class="course_main" ng-controller="courseListCtl">
+                    <div class="main_top">
+                    <span class="course_data active" data-option="all">全部课程</span>
+                    <span class="course_data" data-option="new">最新课程</span> 
+                    <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
+                    <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
+                    </div>
+                    <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
+                        <li ng-repeat="item in list">
+                            <span class='left_img' ui-sref="index.courseBulletion.detail({courseId:item.id})">
+                                <img ng-src='{{item.imgurl}}' width='176' height='121'>
+                            </span>"
+                            <span class='cousrsetitle' ui-sref="index.courseBulletion.detail({courseId:item.id})">{{item.name}}</span>
+                            <span class='unit'>
+                                <span class='unit_name'>{{item.unit}}</span>
+                                <span class='date'>{{item.date}}</span>
+                            </span>                    
+                            <span class='detail_content'>{{item.detail}}</span>
+                            <span class='time'><em>时长 : </em>{{item.time}}</span>
+                            <span class='teacher'><em>讲师 : </em>{{item.teacher}}</span>  
+                            <span class='signnumbg'></span>     
+                            <span class='signnum'>{{item.signnum}}</span>                              
+                            <i ng-if="item.left_signnum == 0"> 
+                                <span class='zero'>剩余名额：{{item.left_signnum}}</span>
+                                <input class='now_sign full' value='立即报名' readonly='true'><span class='fullinfo'>名额已满</span> 
+                            </i>
+                            <i ng-if="!angular.equals(item.left_signnum,0)"> 
+                                <span class='left_signnum'>剩余名额：{{item.left_signnum}}</span>
+                                <input class='now_sign' value='立即报名'>
+                            </i>    
+                                
+                            
+                                                    
+                        </li>                 
+                    </ul>             
+                </div>
+                <!--分页-->
+                <div class="commonpage"></div> 		
+                <!--分页-->
             </div>
-            <div class="single_change">
-                <div class="course_search1 "> 
-                 <label class="class_course">分类课程：</label>
-                  <span class="course_name">增值税</span>
-                  <span class="course_name">消费税</span>
-                  <span class="course_name">企业所得税</span>
-                  <span class="course_name">车辆购置税</span>
-                  <span class="course_name">进出口税收</span>
-                  <span class="course_name">非居民税收</span>
-                  <span class="course_name">其他</span>
-                </div>
-                <div class="course_search1 course_searchlast "> 
-                 <label class="class_course">专题课程：</label>
-                  <span class="course_name">新办纳税人</span>
-                  <span class="course_name li_on">营改增</span>
-                  <span class="course_name">小微企业税收优惠</span>
-                  <span class="course_name">电子税务局</span>
-                </div>
-            </div>    	    
-    	   </div>
-         <div class="searchdiv-fold open">收起搜索</div>
+        </div>
 
          <div class="course_main" ng-controller="courseListCtl">
             <div class="main_top">
@@ -90,48 +126,47 @@
     	</div>
   </div>
 
-    <div class="commontabs right_container">
-      <div class="menus-item menus2">
-        <span class="active">最新课程</span>
-        <span>推荐课程</span>
-      </div>
 
-       <div class="commonlist_container" >
-          <div id="new_course" class="item" ng-show="current=0">
-             <ul ng-controller="courseListCtl">
-                  <li  ng-repeat="item in list">     
-                      <span class='single' ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-show="item.isShow" ng-mouseenter="item.isShow = true" ng-mouseleave="item.isShow = false"><em class='num'>{{$index+1}}<!--|filter:intFormat--></em>{{item.name}}</span> 
-                      <span class='detail' ng-show="!item.isShow" ng-mouseenter="item.isShow = false" ng-mouseleave="item.isShow = true">
-                          <span class='videoimg'><img ng-src='{{item.imgurl}}' alt='{{item.imgurl}}'></span>
-                          <dl>
-                              <dd class='name'>{{item.name}}</dd>
-                              <dd class='teacher'>讲师 : {{item.teacher}}</dd>
-                              <dd class='time'>时长 : {{item.time}}</dd>
-                          </dl>
-                      </span>
-                  </li>
-              </ul>
-          </div>
-          <div id="recommend_cousrse" class="item" ng-show="current=1">
-              <ul ng-controller="recommendCourseCtl">
-                  <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list">     
-                      <span class='single' ng-show="item.isShow" ng-mouseenter="item.isShow = true" ng-mouseleave="item.isShow = false"><em class='num'>{{$index+1}}</em>{{item.name}}</span> 
-                      <span class='detail' ng-show="!item.isShow" ng-mouseenter="item.isShow = false" ng-mouseleave="item.isShow = true">
-                          <span class='videoimg'><img ng-src='{{item.imgurl}}' alt='{{item.imgurl}}'></span>
-                          <dl>
-                              <dd class='name'>{{item.name}}</dd>
-                              <dd class='teacher'>讲师 : {{item.teacher}}</dd>
-                              <dd class='time'>时长 : {{item.time}}</dd>
-                          </dl>
-                      </span>
-                  </li>
-              </ul>
-          </div>
-       </div>
-      
-    </div>
+        <tabs>
+            <pane title="最新课程">
+                <ul ng-controller="courseListCtl">
+                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                        <hoveritem>
+                            <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
+                            <detail>
+                                <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                                <dl>
+                                    <dd class="name">{{item.name}}</dd>
+                                    <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                                    <dd class="time">时长 : {{item.time}}</dd>
+                                </dl>    
+                            </detail> 
+                        </hoveritem>
+                    </li>
+                </ul>
+            </pane>
+            <pane title="推荐课程">
+                <ul ng-controller="recommendCourseCtl">
+                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                        <hoveritem>
+                            <single><em class="num">{{$index+1}}</em>2-{{item.name}}</single>
+                            <detail>
+                                <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                                <dl>
+                                    <dd class="name">2-{{item.name}}</dd>
+                                    <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                                    <dd class="time">时长 : {{item.time}}</dd>
+                                </dl>    
+                            </detail> 
+                        </hoveritem>
+                    </li>
+                </ul>
+            </pane>
+        </tabs>
+
+
 	
-  </div>
+    </div>
 	
 
 
@@ -139,7 +174,7 @@
 <script type="text/javascript">
   $(function(){
 
-              //通用分页插件
+    //通用分页插件
       $(".commonpage").createPage({
           pageCount:6,//页数的总数
           pageSize:10,//每页10条记录
@@ -169,6 +204,3 @@
 });
 
 </script>
-
-</body>
-</html>
