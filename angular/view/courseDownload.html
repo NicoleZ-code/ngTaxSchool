@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>纳税人学堂-课件下载</title>
-	
-</head>
-<body>
+
 <div class="common_container" >
   <div class="course_container" id="course_container">
 		<p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">课件下载</a>>>
@@ -69,19 +62,26 @@
       </div>
   </div>
 
-    <div class="commontabs right_container">
-      <div class="menus-item menus2">
-        <span class="active">热门推荐</span>
-      </div>
+    <tabs>
+        <pane title="热门推荐">
+            <ul ng-controller="courseListCtl">
+                <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                    <hoveritem>
+                        <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
+                        <detail>
+                            <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                            <dl>
+                                <dd class="name">{{item.name}}</dd>
+                                <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                                <dd class="time">时长 : {{item.time}}</dd>
+                            </dl>    
+                        </detail> 
+                    </hoveritem>
+                </li>
+            </ul>
+        </pane>
+    </tabs>
 
-       <div class="commonlist_container" >
-          <div id="recommend_cousrse" class="item">
-             推荐课程
-          </div>
-       </div>
-      
-    </div>
-	
   </div>
 	
 
@@ -145,49 +145,7 @@
     downloadnum:"123"
   }
 ]
-var courseDownjosn2 =[
-  {
-    id:"",
-    imgurl:"public/images/pic0-01.png",
-    name:"最新最新课件xxxxx",
-    unit:"南京市鼓楼分局",
-    date:"2015-11-27 16:00",
-    detail:"最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx最新最新课件xxxxx",
-    size:"5.5M",
-    type:"视频",
-    downloadnum:"123"
-  },{
-    id:"",
-    imgurl:"public/images/pic0-01.png",
-    name:"最新最新课件xxxxx",
-    unit:"南京市鼓楼分局南京市鼓楼分局南京市鼓楼分局",
-    date:"2015-11-27 16:00",
-    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
-    size:"5.5M",
-    type:"视频",
-    downloadnum:"123"
-  },{
-    id:"",
-    imgurl:"public/images/pic0-01.png",
-    name:"最新最新课件xxxxx",
-    unit:"南京市鼓楼分局",
-    date:"2015-11-27 16:00",
-    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
-    size:"5.5M",
-    type:"视频",
-    downloadnum:"123"
-  },{
-    id:"",
-    imgurl:"public/images/pic0-01.png",
-    name:"最新最新课件xxxxx",
-    unit:"南京市鼓楼分局南京市鼓楼分局南京市鼓楼分局",
-    date:"2015-11-27 16:00",
-    detail:"课程从17个不同方面为您讲解营改增前后税收优惠变化，还讲解为您融资租赁行业的基本税收政策、税收优惠、热点难点问题等。",
-    size:"5.5M",
-    type:"视频",
-    downloadnum:"123"
-  }
-] 
+
       //通用分页插件
       $(".commonpage").createPage({
           pageCount:66,//页数的总数
@@ -235,20 +193,7 @@ var courseDownjosn2 =[
           break;
       }
     }
-      /*加载最新，推荐视频列表*/
-
-     commonlistInit_courseDownload({
-      targetId:"#new_course",
-      josn:courseDownjosn
-     });
-     commonlistInit_courseDownload({
-      targetId:"#recommend_cousrse",
-      josn:courseDownjosn2
-     });
 
 });
 
 </script>
-
-</body>
-</html>
