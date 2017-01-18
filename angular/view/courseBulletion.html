@@ -82,50 +82,7 @@
                 <div class="commonpage"></div> 		
                 <!--分页-->
             </div>
-        
-
-            <div class="course_main" ng-controller="courseListCtl">
-                <div class="main_top">
-                <span class="course_data active" data-option="all">全部课程</span>
-                <span class="course_data" data-option="new">最新课程</span> 
-                <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
-                <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
-                </div>
-                <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
-                    <li ng-repeat="item in list">
-                        <span class='left_img' ui-sref="index.courseBulletion.detail({courseId:item.id})">
-                            <img ng-src='{{item.imgurl}}' width='176' height='121'>
-                        </span>"
-                        <span class='cousrsetitle' ui-sref="index.courseBulletion.detail({courseId:item.id})">{{item.name}}</span>
-                        <span class='unit'>
-                            <span class='unit_name'>{{item.unit}}</span>
-                            <span class='date'>{{item.date}}</span>
-                        </span>                    
-                        <span class='detail_content'>{{item.detail}}</span>
-                        <span class='time'><em>时长 : </em>{{item.time}}</span>
-                        <span class='teacher'><em>讲师 : </em>{{item.teacher}}</span>  
-                        <span class='signnumbg'></span>     
-                        <span class='signnum'>{{item.signnum}}</span>                              
-                        <i ng-if="item.left_signnum == 0"> 
-                            <span class='zero'>剩余名额：{{item.left_signnum}}</span>
-                            <input class='now_sign full' value='立即报名' readonly='true'><span class='fullinfo'>名额已满</span> 
-                        </i>
-                        <i ng-if="!angular.equals(item.left_signnum,0)"> 
-                            <span class='left_signnum'>剩余名额：{{item.left_signnum}}</span>
-                            <input class='now_sign' value='立即报名'>
-                        </i>    
-                            
-                        
-                                                
-                    </li>                 
-                </ul>             
-            </div>
-            <!--分页-->
-            <div class="commonpage"></div> 		
-            <!--分页-->
-    	</div>
-
-
+         </div>
 
         <tabs>
             <pane title="最新课程">
