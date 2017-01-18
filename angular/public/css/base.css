@@ -430,7 +430,7 @@ body {
   background: #efefef;
   position: absolute;
   height: 100%;
-  topÃƒÂ¯Ã‚Â¼Ã…Â¡0px;
+  top:0px;
   z-index: 100;
 }
 .shdow_1{
@@ -994,7 +994,7 @@ position: relative;
 }
 /*commmon css-end*/
 
-/*ÃƒÂ¨Ã‚Â¯Ã‚Â¾ÃƒÂ§Ã‚Â¨Ã¢â‚¬Â¹ÃƒÂ¥Ã¢â‚¬Â¦Ã‚Â¬ÃƒÂ¥Ã¢â‚¬ËœÃ…Â */
+
 .course_container .course_search{
   width: 100%;
   color:#322723;
@@ -1235,7 +1235,14 @@ position: relative;
   left: 200px;
   font-size: 14px;
   color: #333;
-  white-space: nowrap;  word-wrap: normal;  overflow: hidden;  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+#coursecontent li .cousrsetitle:hover{
+  color: #0f68ac;
 }
 #coursecontent li .unit{
   top: 24px;
@@ -1452,8 +1459,7 @@ position: relative;
 #coursecontent.table li .fullinfo{
   display: none;
 }
-/*ÃƒÂ¨Ã‚Â¯Ã‚Â¾ÃƒÂ§Ã‚Â¨Ã¢â‚¬Â¹ÃƒÂ¥Ã¢â‚¬Â¦Ã‚Â¬ÃƒÂ¥Ã¢â‚¬ËœÃ…Â -end*/
-/*ÃƒÂ¨Ã‚Â¯Ã‚Â¾ÃƒÂ¤Ã‚Â»Ã‚Â¶ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Â¹ÃƒÂ¨Ã‚Â½Ã‚Â½-start*/
+
 #coursecontent li .downloadnum1{
   bottom: 10px;
   left: 200px;
@@ -1526,9 +1532,7 @@ position: relative;
   position: absolute;
   cursor: pointer;
 }
-/*ÃƒÂ¨Ã‚Â¯Ã‚Â¾ÃƒÂ¤Ã‚Â»Ã‚Â¶ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Â¹ÃƒÂ¨Ã‚Â½Ã‚Â½-end*/
 
-/*ÃƒÂ¨Ã‚Â¯Ã‚Â¾ÃƒÂ§Ã‚Â¨Ã¢â‚¬Â¹ÃƒÂ¨Ã‚Â¯Ã‚Â¦ÃƒÂ¦Ã†â€™Ã¢â‚¬Â¦*/
 .coursdetail_content{
   width: 780px;
   overflow: hidden;
@@ -1611,18 +1615,13 @@ position: relative;
   width: 100%;
   background: #fff;
 }
-.detail_table td{
-
-  line-height: 40px;
-  text-align: right;
-}
+.detail_table td{line-height: 20px;padding: 10px 0;text-align: right;}
 .detail_table  .detail_content{
   text-align: left;
   padding-left: 15px;
 }
 .detail_table  .detail_content.moreinfo{
  /* height: 90px;*/
-  line-height: 25px;
 }
 .download_info{
   cursor: pointer;
@@ -1666,7 +1665,7 @@ position: relative;
   border-top: 2px solid #1168ad;
   border-right: 1px solid #d3d3d3;
 }
-/*ÃƒÂ¤Ã‚ÂºÃ¢â‚¬â„¢ÃƒÂ¥Ã…Â Ã‚Â¨ÃƒÂ¨Ã‚Â¯Ã¢â‚¬Å¾ÃƒÂ¤Ã‚Â»Ã‚Â·*/
+
 .teract_container{
   width: 100%;
   overflow: hidden;
@@ -1767,7 +1766,7 @@ position: relative;
 }
 
 
- /*ÃƒÂ¨Ã‚Â§Ã¢â‚¬Â ÃƒÂ©Ã‚Â¢Ã¢â‚¬ËœÃƒÂ¦Ã¢â‚¬Â¢Ã¢â€žÂ¢ÃƒÂ§Ã‚Â¨Ã¢â‚¬Â¹-start*/
+
 .videoClass .left_container,.tractmore_list .leftmenu{
   width: 200px;
   float: left;
@@ -2459,7 +2458,7 @@ position: relative;
   background-color: #FFA003;
 }
 /*onlineTest-end*/
-/*ÃƒÂ©Ã¢â€šÂ¬Ã…Â¡ÃƒÂ§Ã¢â‚¬ÂÃ‚Â¨ÃƒÂ¥Ã‹â€ Ã¢â‚¬Â ÃƒÂ©Ã‚Â¡Ã‚ÂµÃƒÂ¦Ã‚ÂÃ¢â‚¬â„¢ÃƒÂ¤Ã‚Â»Ã‚Â¶-start*/
+
 .commonpage {
     padding: 0;
     text-align: left;
@@ -2538,9 +2537,7 @@ position: relative;
     background: url(../images/icon-course.png) no-repeat 0 -281px; 
 }
 
-/*ÃƒÂ¥Ã¢â‚¬Â¦Ã‚Â¬ÃƒÂ¥Ã¢â‚¬Â¦Ã‚Â±ÃƒÂ¥Ã‹â€ Ã¢â‚¬Â ÃƒÂ©Ã‚Â¡Ã‚ÂµÃƒÂ¦Ã‚ÂÃ¢â‚¬â„¢ÃƒÂ¤Ã‚Â»Ã‚Â¶-end*/
 
-/*ÃƒÂ¤Ã‚ÂºÃ¢â‚¬â„¢ÃƒÂ¥Ã…Â Ã‚Â¨ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Å“ÃƒÂ¥Ã…â€™Ã‚Âº*/
 .tractmore_main{
   margin-left: 20px;
   float: left;
@@ -2653,7 +2650,7 @@ position: relative;
   margin-right: 20px;
   color: #3A2D27;
 }
-/*ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Å“ÃƒÂ¥Ã…â€™Ã‚ÂºÃƒÂ¨Ã‚Â¯Ã‚Â¦ÃƒÂ¦Ã†â€™Ã¢â‚¬Â¦*/
+
 .detail_main{
   width: 998px;
   background: #fff;
@@ -2710,7 +2707,7 @@ position: relative;
   top:0px;
   cursor: pointer;
 }
-/*ÃƒÂ¤Ã‚ÂºÃ¢â‚¬â„¢ÃƒÂ¥Ã…Â Ã‚Â¨ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Å“ÃƒÂ¥Ã…â€™Ã‚ÂºÃƒÂ¦Ã…â€œÃ¢â€šÂ¬ÃƒÂ¦Ã¢â‚¬â€œÃ‚Â°ÃƒÂ©Ã¢â‚¬â€Ã‚Â®ÃƒÂ©Ã‚Â¢Ã‹Å“*/
+
 .leftmenu .newsuestion_title{
    height: 40px;
    line-height: 40px;
@@ -2747,7 +2744,7 @@ position: relative;
 .newsuestion_content i.first{
   background: #DD5519;
 }
-/*ÃƒÂ§Ã¢â€žÂ¢Ã‚Â»ÃƒÂ¥Ã‚Â½Ã¢â‚¬Â¢ÃƒÂ©Ã‚Â¡Ã‚ÂµÃƒÂ©Ã‚ÂÃ‚Â¢*/
+
 .login{
   width: 100%;
   overflow-y:hidden;
