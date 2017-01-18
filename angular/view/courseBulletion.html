@@ -48,19 +48,19 @@
     	   </div>
          <div class="searchdiv-fold open">收起搜索</div>
 
-         <div class="course_main">
+         <div class="course_main" ng-controller="courseListCtl">
             <div class="main_top">
               <span class="course_data active" data-option="all">全部课程</span>
               <span class="course_data" data-option="new">最新课程</span> 
-              <div class='course_style list active' data-option="list"><span></span></div>
-              <div class="course_style table" data-option="table"><span></span></div>
+              <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
+              <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
             </div>
-              <ul id="coursecontent" class="list" ng-controller="courseListCtl">  
-                  <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list">
+              <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
+                  <li ng-repeat="item in list">
                       <span class='left_img' ui-sref="index.courseBulletion.detail({courseId:item.id})">
                           <img ng-src='{{item.imgurl}}' width='176' height='121'>
                       </span>"
-                      <span class='cousrsetitle'>{{item.name}}</span>
+                      <span class='cousrsetitle' ui-sref="index.courseBulletion.detail({courseId:item.id})">{{item.name}}</span>
                       <span class='unit'>
                           <span class='unit_name'>{{item.unit}}</span>
                           <span class='date'>{{item.date}}</span>
@@ -97,11 +97,11 @@
       </div>
 
        <div class="commonlist_container" >
-          <div id="new_course" class="item">
+          <div id="new_course" class="item" ng-show="current=0">
              <ul ng-controller="courseListCtl">
-                  <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list | filter : {teacher : ''}">     
-                      <span class='single'><em class='num'>{{$index+1}}<!--|filter:intFormat--></em>{{item.name}}</span> 
-                      <span class='detail'>
+                  <li  ng-repeat="item in list">     
+                      <span class='single' ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-show="item.isShow" ng-mouseenter="item.isShow = true" ng-mouseleave="item.isShow = false"><em class='num'>{{$index+1}}<!--|filter:intFormat--></em>{{item.name}}</span> 
+                      <span class='detail' ng-show="!item.isShow" ng-mouseenter="item.isShow = false" ng-mouseleave="item.isShow = true">
                           <span class='videoimg'><img ng-src='{{item.imgurl}}' alt='{{item.imgurl}}'></span>
                           <dl>
                               <dd class='name'>{{item.name}}</dd>
@@ -112,11 +112,11 @@
                   </li>
               </ul>
           </div>
-          <div id="recommend_cousrse" class="item">
+          <div id="recommend_cousrse" class="item" ng-show="current=1">
               <ul ng-controller="recommendCourseCtl">
                   <li ui-sref="index.courseBulletion.detail({courseId:item.id})" ng-repeat="item in list">     
-                      <span class='single'><em class='num'>{{$index+1}}</em>{{item.name}}</span> 
-                      <span class='detail'>
+                      <span class='single' ng-show="item.isShow" ng-mouseenter="item.isShow = true" ng-mouseleave="item.isShow = false"><em class='num'>{{$index+1}}</em>{{item.name}}</span> 
+                      <span class='detail' ng-show="!item.isShow" ng-mouseenter="item.isShow = false" ng-mouseleave="item.isShow = true">
                           <span class='videoimg'><img ng-src='{{item.imgurl}}' alt='{{item.imgurl}}'></span>
                           <dl>
                               <dd class='name'>{{item.name}}</dd>
@@ -156,40 +156,15 @@
            $(".fork_detail").show();
            $("#fork").html(_value);                       
        });
-       loadData("all");
-       //全部课程，最新课程切换切换
-      $(".course_data").click(function(){
-         var  op =$(this).attr("data-option");
-         $(this).addClass("active").siblings(".course_data").removeClass("active");
-         loadData(op);
-      });
-      //list和table两种展现方式切换
-      $(".course_style").click(function(){
-          var  style =$(this).attr("data-option");
-          $(this).addClass("active").siblings(".course_style").removeClass("active");
-          $("#coursecontent").attr("class",style);
-      });
 
-     //右侧列表
-    $(".commontabs").tab({
-        tabList: ".menus-item span",  
-        tabContent: ".commonlist_container .item", 
-        tabOn:"active", 
-        action: "mouseover" 
-    });
+
+
     
     $(".fork_img").click(function(){
        $(".single_change span.li_on").toggleClass("li_on");
        $(this).parent(".fork_detail").hide();
     });
-    function loadData(op){
-      switch(op){
-        case "all": courseBulletionInit("#coursecontent",coursejosn);
-          break;
-        case "new": courseBulletionInit("#coursecontent",coursejosn2);
-          break;
-      }
-    }
+
 
 });
 
