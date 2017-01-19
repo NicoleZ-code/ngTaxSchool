@@ -1,6 +1,7 @@
 var routerApp = angular.module('routerApp', 
         [
              'ui.router',
+             'utils',
              'HomeModule',
              'CourseBulletionModule',
              'InteractiveModule',

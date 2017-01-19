@@ -70,18 +70,28 @@
       </div>
        
     </div>
-    <div class="commontabs right_container">
-      <div class="menus-item menus2">
-        <span class="active">相关课程</span>
-      </div>
 
-       <div class="commonlist_container" >
-          <div id="related_cousrse" class="item">
-             相关课程
-          </div>
-       </div>
-      
-    </div>
+
+    <tabs>
+      <pane title="相关课程">
+          <ul ng-controller="courseListCtl">
+              <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+                  <hoveritem>
+                      <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
+                      <detail>
+                          <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                          <dl>
+                              <dd class="name">{{item.name}}</dd>
+                              <dd class="teacher">讲师 : {{item.teacher}}</dd>
+                              <dd class="time">时长 : {{item.time}}</dd>
+                          </dl>    
+                      </detail> 
+                  </hoveritem>
+              </li>
+          </ul>
+      </pane>
+
+    </tabs>  
 
 
 	
