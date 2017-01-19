@@ -1,23 +1,14 @@
 'use strict'
 /**
- * 课程列表
+ * 实体课程列表
  */
 
-courseMoudle.controller('courseCtl',function($scope, $http, $state, $stateParams){
-
-})
- 
-/**
- * 最新课程
- */
-.controller('courseListCtl',function($scope, $http, $state, $stateParams,searchService){
-    $scope.isList = true;
+courseMoudle.controller('courseEntityListCtl',function($scope, $http, $state, $stateParams,searchService){
     $scope.list =  searchService.init() ;
     // console.log(searchService.init(),$scope.list) //多一个length
-    searchService.getAllItems('data/course.json')
+    searchService.getAllItems('data/courseEntity.json')
          .success(function(data){
              $scope.list = data;
-             $scope.list["isShow"] = true;
          })
     
     //格式化字符串
@@ -30,31 +21,67 @@ courseMoudle.controller('courseCtl',function($scope, $http, $state, $stateParams
     }
 
 })
-
-/**
- * 推荐课程
- */
-.controller('recommendCourseCtl',function($scope,$http,$state,$stateParams,searchService){
-    $scope.isList = true;
+.controller('searchCourseCtl',function($scope, $http, $state, $stateParams,searchService){
     $scope.list =  searchService.init() ;
-    // console.log(searchService.init(),$scope.list) //多一个length
-    searchService.getAllItems('data/course.json')
+    searchService.getAllItems('data/courseEntity.json')
          .success(function(data){
              $scope.list = data;
-             $scope.list["isShow"] = true;
          })
 })
 
 /**
- * 课件
+ * 视频教程
  */
-.controller('recommendCourseCtl',function($scope,$http,$state,$stateParams,searchService){
-    $scope.isList = true;
+.controller('videoListCtl',function($scope,$http,$state,$stateParams,searchService){
     $scope.list =  searchService.init() ;
-    // console.log(searchService.init(),$scope.list) //多一个length
-    searchService.getAllItems('data/course.json')
+    searchService.getAllItems('data/courseOnline.json')
          .success(function(data){
              $scope.list = data;
-             $scope.list["isShow"] = true;
+         })
+})
+.controller('searchVideoCtl',function($scope, $http, $state, $stateParams,searchService){
+    $scope.isList = true;
+    $scope.list =  searchService.init() ;
+    searchService.getAllItems('data/courseOnline.json')
+         .success(function(data){
+             $scope.list = data;
+         })
+})
+/**
+ * 视频教程-最热视频
+ */
+.controller('videoHotListCtl',function($scope,$http,$state,$stateParams,searchService){
+    $scope.list =  searchService.init() ;
+    searchService.getAllItems('data/courseOnline.json')
+         .success(function(data){
+             $scope.list = data;
+         })
+})
+/**
+ * 视频教程-推荐视频
+ */
+.controller('videoReListCtl',function($scope,$http,$state,$stateParams,searchService){
+    $scope.list =  searchService.init() ;
+    searchService.getAllItems('data/courseOnline.json')
+         .success(function(data){
+             $scope.list = data;
+         })
+})
+/**
+ * 课件相关下载
+ */
+.controller('coursewareSearchCtl',function($scope,$http,$state,$stateParams,searchService){
+    $scope.isList = true;
+    $scope.list =  searchService.init() ;
+    searchService.getAllItems('data/courseware.json')
+         .success(function(data){
+             $scope.list = data;
+         })
+})
+.controller('coursewareListCtl',function($scope,$http,$state,$stateParams,searchService){
+    $scope.list =  searchService.init() ;
+    searchService.getAllItems('data/courseware.json')
+         .success(function(data){
+             $scope.list = data;
          })
 })

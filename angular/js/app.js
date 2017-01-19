@@ -50,8 +50,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         });
 
     var hm = [  'home',
-                'courseBulletion',
-                'courseDownload',
+                'course',
+                'courseware',
                 'videoClass',
                 'onlineList',
                 'interactivePlace'
@@ -78,11 +78,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
              })      
         };
-        $stateProvider.state('index.courseBulletion.detail', {
+        $stateProvider.state('index.course.detail', {
             url: '/{courseId:[0-9]{1,4}}',
             views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
                 'main@index': {
-                    templateUrl: 'view/courseBulletion_detail.html'
+                    templateUrl: 'view/course_detail.html'
                 } 
             }
         })        

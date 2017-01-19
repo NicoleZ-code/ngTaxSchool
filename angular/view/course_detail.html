@@ -1,9 +1,9 @@
 <div class="common_container" >
   <div class="course_container_course" style="width:1000px">
   	<div class="course_head">
-		  <p class="position">当前位置:  >><a ui-sref="index.courseBulletion">课堂公告>></a>课程详情 </p>
+		  <p class="position">当前位置:  >><a ui-sref="index.course">课堂公告>></a>课程详情 </p>
 	  </div>
-    <div class="coursdetail_content">
+    <div class="coursdetail_content" style="width:1000px">
       <div class="coursdetail_head">
         <div class="detail_img">
         <img src="public/images/pic03.png" width="331" height="226">
@@ -70,31 +70,6 @@
       </div>
        
     </div>
-
-
-    <tabs>
-      <pane title="相关课程">
-          <ul ng-controller="courseListCtl">
-              <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
-                  <hoveritem>
-                      <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
-                      <detail>
-                          <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
-                          <dl>
-                              <dd class="name">{{item.name}}</dd>
-                              <dd class="teacher">讲师 : {{item.teacher}}</dd>
-                              <dd class="time">时长 : {{item.time}}</dd>
-                          </dl>    
-                      </detail> 
-                  </hoveritem>
-              </li>
-          </ul>
-      </pane>
-
-    </tabs>  
-
-
-	
 
 
 </div>	
