@@ -34,6 +34,13 @@ interactiveModule.controller("interactiveCtrl", function($scope, $http, $state, 
 		$scope.data2 = data;
 	});
 })
+/*互动专区--更多详情页*/
+.controller("interactiveMoreDetailCtrl", function($scope, $http, $state, $stateParams){
+	$http.get("../angular/data/interactiveMore.json")
+	.success(function(data){   
+		$scope.datas = data[0]
+	});
+})
 /*互动专区--新的问题*/
 .controller("interactiveQuestionCtrl", function($scope, $http, $state, $stateParams){
 	$http.get("../angular/data/interactiveMore.json")

@@ -30,4 +30,9 @@ homeModule.controller("homeBannerImg", function($scope, $http, $state, $statePar
 	.success(function(data){
 		$scope.data2 = data;
 	});
+
+	$scope.cur = 0;
+	$scope.setHover = function(param){
+		$scope.cur = param;
+	}
 })

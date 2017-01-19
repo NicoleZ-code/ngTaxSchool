@@ -47,7 +47,7 @@
 					<div class="tab_content_item rank" ng-if="data.current == 1">
 						<ul>
 							<li ng-repeat="item in data1">
-								<a ng-class="{'hover':item.isHover}">
+								<a ng-class="{'hover':cur == {{$index}}}" ng-mouseenter="setHover($index)">
 									<div class="simple">
 										<span class="no">{{item.num}}</span>
 										<span class="title_1 tx_unbr">{{item.title}}</span>

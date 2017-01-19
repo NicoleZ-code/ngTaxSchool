@@ -2354,6 +2354,9 @@ position: relative;
   border: 1px solid #F4AD81;
   padding: 20px 25px;
 }
+.qu_container .qu-item.now{
+  display: block;
+}
 #questionskey.qu_container .qu-item{
   display: block;
 } 

@@ -3,15 +3,14 @@
     <div class="common_container">
 		 <p class="position">当前位置:<a ui-sref="index.interactivePlace">互动专区>></a><a class="back" ui-sref="index.interactivePlace.more">互动专区</a>-详情</p>
 	</div>
-	<div class="detail_main" style="height:510px;">
+	<div class="detail_main" style="height:510px;" ng-controller="interactiveMoreDetailCtrl">
 	    <div class="content_trect">
 	   		<div class="detail_main_title">
-				<span class="detail_main_big">红字增值税专用发票开具申请</span>
-				<span class="detail_main_small">发布日期：2015-12-08</span>
+				<span class="detail_main_big">{{datas.title}}</span>
+				<span class="detail_main_small">发布日期：{{datas.time}}</span>
 	   		</div>
 			<div class="detail_main_detail">
-				<span class="detail_tract">增值税一般纳税人开具增值税专用发票后，发生销货退回、开票有误、应税服务中止及发票抵扣联、发票联均无法认证等情形单不符合作废条件，或者因销货部分退回及发生销售这让，需要开具红字专用发票的，凭税务机关系统校验通过的信息开具红字专用发票。</span>
-				<span class="detail_tract">增值税一般纳税人开具增值税专用发票后，发生销货退回、开票有误、应税服务中止及发票抵扣联、发票联均无法认证等情形单不符合作废条件，或者因销货部分退回及发生销售这让，需要开具红字专用发票的，凭税务机关系统校验通过的信息开具红字专用发票。</span>
+				<span class="detail_tract">{{datas.con}}</span>
 			</div>
 	    </div>
 	</div>
