@@ -7,7 +7,7 @@ require.config({
 		'utils-service':'js/utils/utils-service',
 		'utils-directive':'js/utils/utils-directive',
 		'home.controller':'js/controller/home.controller',
-		'courseBulletion.controller':'js/controller/courseBulletion.controller',
+		'course.controller':'js/controller/course.controller',
 		'interactive.controller':'js/controller/interactive.controller',
 		'onlineList.controller':'js/controller/onlineList.controller'
 	},
@@ -22,7 +22,7 @@ require.config({
 		'utils-directive': {deps:['angular','angular-ui']},
 		'utils-service': {deps:['angular','angular-ui']},
 		'home.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
-		'courseBulletion.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
+		'course.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
 		'interactive.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
 		'onlineList.controller': {deps:['angular','angular-ui','utils-directive','utils-service']}
 	}
@@ -37,7 +37,7 @@ require([
 		'utils-service',
 		'utils-directive',
 		'home.controller',
-		'courseBulletion.controller',
+		'course.controller',
 		'interactive.controller',
 		'onlineList.controller'
 		 ],

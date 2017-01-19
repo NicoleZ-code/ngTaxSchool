@@ -6,6 +6,18 @@
           </span>
        </p>
         <div class="course_left">
+            <course-search>
+                <condition>
+
+                </condition>
+                <search-content>
+
+                </search-content>
+                <commonpage>
+
+                </commonpage>
+            </course-search>
+
             <div class="course_search">
                 <div class="course_top">
                     <div class="course_search1"> 
@@ -44,10 +56,10 @@
 
                 <div class="course_main" ng-controller="courseListCtl">
                     <div class="main_top">
-                    <span class="course_data active" data-option="all">全部课程</span>
-                    <span class="course_data" data-option="new">最新课程</span> 
-                    <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
-                    <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
+                        <span class="course_data active" data-option="all">全部课程</span>
+                        <span class="course_data" data-option="new">最新课程</span> 
+                        <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
+                        <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
                     </div>
                     <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
                         <li ng-repeat="item in list">
@@ -78,6 +90,7 @@
                         </li>                 
                     </ul>             
                 </div>
+
                 <!--分页-->
                 <div class="commonpage"></div> 		
                 <!--分页-->
