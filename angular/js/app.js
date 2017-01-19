@@ -3,7 +3,7 @@ var routerApp = angular.module('routerApp',
              'ui.router',
              'utils',
              'HomeModule',
-             'CourseBulletionModule',
+             'CourseModule',
              'InteractiveModule',
              'OnlineListModule'
             // 'ngGrid', 
@@ -97,7 +97,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         })   
         .state('index.interactivePlace.more.detail', {
             url: '/{courseId:[0-9]{1,4}}',
-            views:{ //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+            views:{ 
                 'main@index': {
                     templateUrl: 'view/interactive_more_detail.html'
                 }
@@ -113,7 +113,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         })   
         .state('index.onlineList.detail', {
             url: '/{courseId:[0-9]{1,4}}',
-            views:{ //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+            views:{ 
                 'main@index': {
                     templateUrl: 'view/onlineDetail.html'
                 }
@@ -121,7 +121,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         })  
         .state('index.onlineList.detail.answer', {
             url: '/index.onlineList.detail.answer',
-            views:{ //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+            views:{ 
                 'main@index': {
                     templateUrl: 'view/oquestionskey.html'
                 }

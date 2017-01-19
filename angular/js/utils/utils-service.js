@@ -5,7 +5,7 @@
 /**
  * 搜索项
  */
-var courseMoudle = angular.module('CourseBulletionModule',[]);
+var courseMoudle = angular.module('CourseModule',[]);
 courseMoudle.factory('searchService', ['$http',function($http) {
         var item = {
             "id":"",

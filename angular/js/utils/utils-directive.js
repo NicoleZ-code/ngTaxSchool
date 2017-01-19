@@ -105,7 +105,7 @@ angular.module('utils',[])
       replace: true
     };
   })
-   .directive('detail', function() {
+  .directive('detail', function() {
     return {
       // require: '^hoveritem',
       restrict: 'E',
@@ -143,8 +143,24 @@ angular.module('utils',[])
  */
 .directive('search',['',function(){
     return {
-        restrict:'AE',
+        restrict:'E',
         replace:true,
+        template:'',
+        link: function($scope, iElm, iAttrs, controller) {
+            
+        }
+    }
+}])
+/**
+ * 折叠
+ */
+.directive('fold',['',function(){
+    return {
+        restrict:'E',
+        replace:true,
+        controller:function($scope, element, attrs){
+          
+        },
         template:'',
         link: function($scope, iElm, iAttrs, controller) {
             
@@ -157,7 +173,7 @@ angular.module('utils',[])
  */
 .directive('course-grid',['',function(){
     return {
-        restrict:'AE',
+        restrict:'E',
         replace:true,
         template:'',
         link: function($scope, iElm, iAttrs, controller) {
@@ -171,7 +187,7 @@ angular.module('utils',[])
  */
 .directive('video-grid',['',function(){
     return {
-        restrict:'AE',
+        restrict:'E',
         replace:true,
         template:'',
         link: function($scope, iElm, iAttrs, controller) {
@@ -185,7 +201,7 @@ angular.module('utils',[])
 
 .directive('exame',['',function(){
     return {
-        restrict:'AE',
+        restrict:'E',
         replace:true,
         template:'',
         link: function($scope, iElm, iAttrs, controller) {

@@ -867,10 +867,10 @@ body {
   margin-left: 20px;
 }
 .common_question ul li .course_detial p{
-height: 30px;
-line-height: 30px;
-color: #aeadad;
-position: relative;
+  height: 30px;
+  line-height: 30px;
+  color: #aeadad;
+  position: relative;
 
 
 }
@@ -885,7 +885,7 @@ position: relative;
   color: #fff;
   line-height: 21px;
   padding-left: 6px;
-  width: 39px;
+  width: 38px;
   position: absolute;
   top: 5px;
 }
