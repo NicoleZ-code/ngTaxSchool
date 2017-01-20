@@ -1609,6 +1609,9 @@ i{
   top:105px;
   cursor: pointer;
 }
+.me_sign.gray{
+  background: #555;
+}
 .apply_time{
    position: absolute;
   top:55px;
@@ -2295,6 +2298,9 @@ i{
     margin-top: 30px;
     overflow: hidden;
 }
+.videoClassView  .rightinfo .action a{
+  color:#fff;
+}
 .videoClassView  .rightinfo .action span{
     display: block;
     float: left;
@@ -2314,8 +2320,9 @@ i{
 .videoClassView  .rightinfo .action span.action2{  
     background: url(../images/icons_video.png) no-repeat 3px -109px #D7921B;
 }
-.videoClassView  .rightinfo .action span.action3{ 
+.videoClassView  .rightinfo .action span.action3{
     background: url(../images/icons_video.png) no-repeat 3px -149px #9E5A94;
+    color: #fff;
 }
 .videoClassView  .rightinfo .action span.action4{  
     background: url(../images/icons_video.png) no-repeat 3px -149px #67AA54; 
