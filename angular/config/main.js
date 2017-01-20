@@ -1,6 +1,7 @@
 require.config({
 	baseUrl:'./',
 	paths:{ //bind-once
+		'jquery':'libs/jquery-1.7.2.min',
 		'angular':'libs/angular-1.3.0.14/angular',
         'angular-ui':'libs/angular-ui-router',
 		'app':'js/app',
@@ -30,7 +31,7 @@ require.config({
 
 
 require([
-		// 'jquery',
+		'jquery',
         'angular',
         'angular-ui',
 		'app',
@@ -41,7 +42,7 @@ require([
 		'interactive.controller',
 		'onlineList.controller'
 		 ],
-   function(angular){
+   function(jquery,angular){
 	   //手动启动ng-app
 	   angular.bootstrap(document, ['routerApp']);
    });
