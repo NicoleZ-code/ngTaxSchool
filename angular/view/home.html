@@ -1,18 +1,47 @@
 <div class="common_container">
 	<div class="banner">
-		<div class="Calendar_show">
-		<embed src="public/images/banner.swf" width="1001" height="270" type="application/x-shockwave-flash" wmode="transparent" quality="high"></embed>
+		<img src="public/images/bannerIndex.jpg" alt="">
+		<div id="tagline" class="centerword">
+			<div class="text">
+				<span>新</span>
+				<span>纳</span>
+				<span>税</span>
+				<span>服</span>
+				<span>务</span>
+				<span>平</span>
+				<span>台</span>
+			</div>
+			<div class="text">
+				<span>提</span>
+				<span>高</span>
+				<span>纳</span>
+				<span>税</span>
+				<span>服</span>
+				<span>务</span>
+				<span>水</span>
+				<span>平</span>
+			</div>			
 		</div>
-		
 	</div>
 	<div class="index_content">
 		<div class="inform">
-			<div class="video">
-					<div id="kinMaxShow" ng-controller="homeBannerImg">
+			<div class="video" style="height: 328px;">
+				<div id="kinMaxShow">
 	 				<div>
-	        			<a href="#"><img ng-src="{{src}}"/></a>
+	        			<a href="#"><img src="public/images/video.png"  /></a>
 	       			</div>
+					<div>
+	        			<a href="#"><img src="public/images/video_1.png" /></a>
+	        		</div>
+	 				<div>
+	        			<a href="#"><img src="public/images/video_2.png"  /></a>
+	        		</div>
 				</div>
+				<!-- <div id="kinMaxShow" ng-controller="homeBannerImg">
+		 				<div>
+		        			<a href="#"><img ng-src="{{src}}"/></a>
+		       			</div>
+				</div> -->
 			</div>
 			<div class="question">
 				<div class="base_information">
@@ -198,56 +227,38 @@
 	</div>
 </div>	
 <script type="text/javascript">
-$(function () {
-	  	$(".right_menu ul li span").hover(function(){
-	  		$(this).parent("li").siblings().find("span").html("");
-	  		$(this).parent("li").siblings().find("span").removeClass("backg");
-	  		$(this).addClass("backg");
-	  		var currentLi=$(this).parent("li").index();
-	  		if(currentLi==0){
-				$(this).html("日历");
-	  		} else if(currentLi==1){
-	  			$(this).html("电话客服");
-	  		}
-	  		else if(currentLi==2){
-	  			$(this).html("Q Q 客服");
-	  		}else {
-	  			$(this).html("常见问题");
-	  		};
-	  		
-	  		$(this).parents(".right_menu").children("div").eq(currentLi).show();
-	  		$(this).parents(".right_menu").children("div").eq(currentLi).siblings("div").hide();
-	  	});
-	  	/*$(".Calendar_close").click(function(){
-	  		$(this).parents(".Calendar").css("display","none");
-	  	})*/
-	  	$(".simple").hover(function(){
-	  		$(this).parents("li").siblings().find(".detail").hide();
-	  		$(this).parents("li").siblings().find(".simple").show();
-	  		$(this).hide();
-	  		$(this).next(".detail").show();
-	  	})
-	  	$(".Calendar").find("tr:last").find("td").css("border","none");
-	  	$("#idCalendarNext").click(function(){
-	  		$(this).parents(".Calendar_top").next().find("tr:last").find("td").css("border","none");
-	  	})
-		$("#idCalendarPre").click(function(){
-			$(this).parents(".Calendar_top").next().find("tr:last").find("td").css("border","none");
-		})
-		$(".right_menu>div").mouseover(function(){
-			
-			$(this).show();
-		})
-		$(".right_menu").mouseleave(function(){
-			$(this).children("div").hide();
-		})
-		$(".pic1 img").hover(function(){
+$(function(){
+	//头部动画
+	var tagline = $("#tagline "),
+	txt = $("#tagline span"),
+    tl = new TimelineMax({
+    	repeat: -1,
+			repeatDelay: 2
+    });
 
-			
-			$(this).parent(".pic1").find(".icon_show").css("display","inline-block");
-			$(this).parents("li").siblings().find(".pic1").find(".icon_show").hide();
-		})
+	TweenLite.set($("#tagline"), {visibility:"visible"});
 
-})
+	tl.staggerFrom(txt, 0.4, {alpha:0}, 0.3, "textEffect");
+	tl.staggerFrom(txt, 0.8, {rotationY:"-270deg", top:80,left:-10, transformOrigin: "50% 50% -80", ease:Back.easeOut}, 0.3, "textEffect");
+	// tl.staggerTo(txt, 0.6, {rotationX:"360deg", color:"#fff", transformOrigin:"50% 50% 10"}, 0.02);	
+	tl.staggerTo(txt, 0.6,{alpha:0},0.05);
+	tl.staggerTo(tagline, 0.01,{scale:0,alpha:0},0.001);
+	tl.staggerTo(txt,0.01,{alpha:1},0.001);
+	tl.staggerTo(tagline,0.8,{alpha:1,scale:1,ease:Back.easeOut},1);
+
+	/*图片轮播*/
+	$("#kinMaxShow").kinMaxShow({
+		height:328,
+		intervalTime:2,
+		button:{
+		  showIndex:false,
+		  normal:{background:'url(public/images/button_2.png)',width:'11px',height:'11px',marginRight:'8px',border:'0',right:'4%',bottom:'15px'},
+		  focus:{background:'url(public/images/button_1.png)',border:'0'}
+		}
+	    
+	});
+  	/*图片轮播end*/
+
+});
 
 </script>
