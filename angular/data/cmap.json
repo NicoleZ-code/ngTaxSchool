@@ -1,0 +1,45 @@
+{
+    "coursewares": [
+        {
+            "courseware_name": "企业所得税税前扣除不得税前扣除的项目相关规定2",
+            "status": null,
+            "file_path": "http://218.94.120.217:2100/20161106/N6ODH62j/index.m3u8",
+            "discription": "企业所得税税前扣除不得税前扣除的项目相关规定2",
+            "courseware_size": 40.0,
+            "lecturer": "无",
+            "id": 566,
+            "upload_time": 1478505330000,
+            "video_click_number": 287,
+            "syn_id": null,
+            "duration": null,
+            "flag": null,
+            "recommond": 0,
+            "ware_class_type": 1,
+            "course_id": 2677,
+            "is_update": 1,
+            "course_type": 30,
+            "view_path": "http://218.94.120.217:2100/20161106/N6ODH62j/index.m3u8"
+        }
+    ],
+    "entityMap": [
+        {
+            "course_dl": 2,
+            "taxpayer_id": "0",
+            "status": 2,
+            "surplus_quota": 0,
+            "teaching_address": "",
+            "course_name": "企业所得税税前扣除不得税前扣除的项目相关规定2",
+            "discription": "企业所得税税前扣除不得税前扣除的项目相关规定2",
+            "sponsor": "无",
+            "time_length": 7,
+            "img_path": "/before/images/bofang.jpg",
+            "area": "",
+            "coursetypeName": "所得税",
+            "area_name": "",
+            "user_id": "江苏省国家税务局",
+            "course_id": 2677,
+            "teaching_time": 1470627235000,
+            "course_type": 30
+        }
+    ]
+}
