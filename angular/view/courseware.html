@@ -67,13 +67,13 @@
             <ul ng-controller="coursewareListCtl">
                 <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.id})">    
                     <hoveritem>
-                        <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
+                        <single><em class="num">{{$index+1}}</em>{{item.courseware_name}}</single>
                         <detail>
-                            <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+                            <span class="videoimg"><img ng-src="public/images/video01.jpg"></span>
                             <dl>
-                                <dd class="name">{{item.name}}</dd>
-                                <dd class="teacher">讲师 : {{item.teacher}}</dd>
-                                <dd class="time">时长 : {{item.time}}</dd>
+                                <dd class="name">{{item.courseware_name}}</dd>
+                                <dd class="teacher">讲师 : {{item.lecturer}}</dd>
+                                <dd class="time">大小 : {{item.courseware_size}}M</dd>
                             </dl>    
                         </detail> 
                     </hoveritem>
