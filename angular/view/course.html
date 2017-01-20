@@ -61,7 +61,7 @@
                         <div class="course_style list" ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
                         <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
                     </div>
-                    <div ng-if="courseType=='entity'">
+                    <div ng-show="courseType=='entity'">
                         <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
                             <li ng-repeat="item in list | limitTo: 8">
                                 <span class="left_img" ui-sref="index.course.detail({courseId:item.course_id})">
@@ -95,7 +95,7 @@
                         <div class="commonpage"></div> 		
                         <!--分页-->
                     </div>
-                   <div ng-if="courseType=='online'" >
+                   <div ng-show="courseType=='online'" >
                         <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}" >  
                             <i ng-controller="searchVideoCtl">
                                 <li ng-repeat="item in list | limitTo: 8">
