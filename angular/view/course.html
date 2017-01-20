@@ -54,19 +54,19 @@
                 <div class="searchdiv-fold open">收起搜索</div>
 
 
-                <div class="course_main" ng-controller="courseListCtl">
+                <div class="course_main" ng-controller="searchCourseCtl">
                     <div class="main_top">
-                        <span class="course_data active" data-option="all">全部课程</span>
-                        <span class="course_data" data-option="new">最新课程</span> 
+                        <span class="course_data active" data-option="all">实体课程</span>
+                        <span class="course_data" data-option="new">网络课程</span> 
                         <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
                         <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
                     </div>
                     <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
                         <li ng-repeat="item in list">
-                            <span class='left_img' ui-sref="index.courseBulletion.detail({courseId:item.id})">
+                            <span class='left_img' ui-sref="index.course.detail({courseId:item.id})">
                                 <img ng-src='{{item.imgurl}}' width='176' height='121'>
                             </span>"
-                            <span class='cousrsetitle' ui-sref="index.courseBulletion.detail({courseId:item.id})">{{item.name}}</span>
+                            <span class='cousrsetitle' ui-sref="index.course.detail({courseId:item.id})">{{item.name}}</span>
                             <span class='unit'>
                                 <span class='unit_name'>{{item.unit}}</span>
                                 <span class='date'>{{item.date}}</span>
@@ -98,9 +98,9 @@
          </div>
 
         <tabs>
-            <pane title="最新课程">
-                <ul ng-controller="courseListCtl">
-                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+            <pane title="实体课程排行">
+                <ul ng-controller="courseEntityListCtl">
+                    <li ng-repeat="item in list" ui-sref="index.course.detail({courseId:item.id})">    
                         <hoveritem>
                             <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
                             <detail>
@@ -115,15 +115,15 @@
                     </li>
                 </ul>
             </pane>
-            <pane title="推荐课程">
-                <ul ng-controller="recommendCourseCtl">
-                    <li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+            <pane title="网络课程排行">
+                <ul ng-controller="videoListCtl">
+                    <li ng-repeat="item in list" ui-sref="index.video.detail({courseId:item.id})">    
                         <hoveritem>
-                            <single><em class="num">{{$index+1}}</em>2-{{item.name}}</single>
+                            <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
                             <detail>
                                 <span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
                                 <dl>
-                                    <dd class="name">2-{{item.name}}</dd>
+                                    <dd class="name">{{item.name}}</dd>
                                     <dd class="teacher">讲师 : {{item.teacher}}</dd>
                                     <dd class="time">时长 : {{item.time}}</dd>
                                 </dl>    

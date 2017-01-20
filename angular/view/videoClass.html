@@ -17,7 +17,7 @@
 				<input type="text" class="searchtext">	
          		<span class="search_btn">搜索</span>
 			</div>
-			<div class="search-item">
+			<!--<div class="search-item">
 				<label>授课时间：</label>
 				<input type="text"  id="datastart" class="easyui-datebox">
            		<span class="to">至</span>
@@ -45,7 +45,7 @@
 					<li>小微企业税收优惠</li>
 					<li>电子税务局</li>
 				</ul>
-			</div>
+			</div>-->
 		</div>
 		<div class="searchdiv-fold open">收起搜索</div>
 		<div id="searchcontent">
@@ -54,26 +54,9 @@
 	</div>	
 
 	<tabs>
-		<pane title="最新视频">
-			<ul ng-controller="courseListCtl">
-				<li ng-repeat="item in list  | limitTo:10" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
-					<hoveritem>
-						<single><em class="num">{{$index+1}}</em>{{item.name}}</single>
-						<detail>
-							<span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
-							<dl>
-								<dd class="name">{{item.name}}</dd>
-								<dd class="teacher">讲师 : {{item.teacher}}</dd>
-								<dd class="time">时长 : {{item.time}}</dd>
-							</dl>    
-						</detail> 
-					</hoveritem>
-				</li>
-			</ul>
-		</pane>
 		<pane title="最热视频">
-			<ul ng-controller="recommendCourseCtl">
-				<li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+			<ul ng-controller="videoHotListCtl">
+				<li ng-repeat="item in list" ui-sref="index.videoClass.detail({courseId:item.id})">    
 					<hoveritem>
 						<single><em class="num">{{$index+1}}</em>2-{{item.name}}</single>
 						<detail>
@@ -89,8 +72,8 @@
 			</ul>
 		</pane>
 		<pane title="推荐视频">
-			<ul ng-controller="recommendCourseCtl">
-				<li ng-repeat="item in list" ui-sref="index.courseBulletion.detail({courseId:item.id})">    
+			<ul ng-controller="videoReListCtl">
+				<li ng-repeat="item in list" ui-sref="index.videoClass.detail({courseId:item.id})">    
 					<hoveritem>
 						<single><em class="num">{{$index+1}}</em>3-{{item.name}}</single>
 						<detail>

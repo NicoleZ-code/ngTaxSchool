@@ -183,8 +183,7 @@ body {
 #main_container{
   min-height: 600px;
   width: 1000px;
-  margin:  0 auto;
-
+  margin: 0 auto 30px auto;
 }
 
 #footer{
@@ -1919,7 +1918,7 @@ body {
 }
 .serachdiv_container .searchdiv .search-item{
     margin-left: 10px;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     line-height: 20px;
     padding:  10px 0;
     clear: both;
@@ -2133,7 +2132,7 @@ body {
     border-bottom: 1px solid #DDD;
 }
 .commontabs .nav-tabs li{
-    width: 60px;
+    width: 47%;
     margin: 0 2px;
     height: 40px;
     line-height: 40px;
@@ -2141,7 +2140,7 @@ body {
     float: left;
     text-align: center;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
 }
 .commontabs .nav-tabs.menus2 li{
     width: 50%;
