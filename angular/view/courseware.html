@@ -55,7 +55,7 @@
     <ul id="coursecontent" class="list" ng-class="{table:!isList,list:isList}">
         <li ng-repeat="item in list | limitTo: 8">
             <span class="left_img" ui-sref="index.videoClass.detail({courseId:item.id})">
-                <img ng-src='public/images/video01.jpg' width='176' height='121'>
+                <img ng-src="public/images/video01.jpg" width='176' height='121'>
             </span>
             <span class="cousrsetitle" ui-sref="index.videoClass.detail({courseId:item.id})">{{item.courseware_name}}</span>
             <span class="unit">
@@ -81,7 +81,7 @@
 <tabs>
     <pane title="相关下载">
         <ul ng-controller="coursewareListCtl">
-            <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.id})">
+            <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.course_id})">
                 <hoveritem>
                     <single><em class="num">{{$index+1}}</em>{{item.courseware_name}}</single>
                     <detail>
