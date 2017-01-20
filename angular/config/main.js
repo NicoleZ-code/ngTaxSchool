@@ -2,6 +2,8 @@ require.config({
 	baseUrl:'./',
 	paths:{ //bind-once
 		'jquery':'libs/jquery-1.7.2.min',
+        'TweenMax':'libs/TweenMax.min',
+        'kinMaxShow':'libs/jquery.kinMaxShow-1.1.min',
 		'angular':'libs/angular-1.3.0.14/angular',
         'angular-ui':'libs/angular-ui-router',
 		'app':'js/app',
@@ -17,6 +19,9 @@ require.config({
 		// {name:'app',main:'',location:'js/'}
 	],
 	shim:{//定义依赖关系
+		'jquery' : {'exports' : 'jquery'},
+		'TweenMax' : {deps:['jquery']},
+		'kinMaxShow' : {deps:['jquery']},
 		'angular' : {'exports' : 'angular'},
 		'angular-ui': {deps:['angular']},
 		'app': {deps:['angular','angular-ui']},
@@ -31,7 +36,7 @@ require.config({
 
 
 require([
-		'jquery',
+	    'jquery',
         'angular',
         'angular-ui',
 		'app',
@@ -40,7 +45,9 @@ require([
 		'home.controller',
 		'course.controller',
 		'interactive.controller',
-		'onlineList.controller'
+		'onlineList.controller',
+		'TweenMax',
+		'kinMaxShow'
 		 ],
    function(jquery,angular){
 	   //手动启动ng-app
