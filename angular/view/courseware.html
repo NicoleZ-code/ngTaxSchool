@@ -65,7 +65,7 @@
     <tabs>
         <pane title="相关下载">
             <ul ng-controller="coursewareListCtl">
-                <li ng-repeat="item in list" ui-sref="index.course.detail({courseId:item.id})">    
+                <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.id})">    
                     <hoveritem>
                         <single><em class="num">{{$index+1}}</em>{{item.name}}</single>
                         <detail>
