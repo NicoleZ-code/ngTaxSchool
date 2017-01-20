@@ -1,75 +1,72 @@
-<div class="common_container" >
+<div class="common_container">
   <div class="course_container_course" style="width:1000px">
-  	<div class="course_head">
-		  <p class="position">当前位置:  >><a ui-sref="index.course">课堂公告>></a>课程详情 </p>
-	  </div>
-    <div class="coursdetail_content" style="width:1000px">
+    <div class="course_head">
+      <p class="position">当前位置: >><a ui-sref="index.course">课程安排>></a>课程详情 </p>
+    </div>
+    <div class="coursdetail_content" style="width:1000px" ng-controller="courseDetailCtl">
       <div class="coursdetail_head">
         <div class="detail_img">
-        <img src="public/images/pic03.png" width="331" height="226">
+          <img ng-src="{{item.img_path}}" width="331" height="226">
         </div>
         <div class="detail_message">
-          <span class="title">
-             增值税一般纳税人丢失防伪税控增值税专用发票申报抵扣
-             </span>
-              <div class="time">
-             开课时间：2015-11-25  16:00
-             </div>
-              <div class="apply_info">
-             <div class="apply_people">讲师：李俊义</div>
-             <span class="apply_quota ">剩余名额：<span class="quote">23</span>
-                截止报名时间还有<span class="quote">2天3小时</span>
+          <span class="title"></span>
+          <div class="apply_info">
+            <div class="apply_people">讲师：{{item.sponsor}}</div>
+            <span class="apply_quota ">剩余名额：<span class="quote">{{item.surplus_quota}}</span> 开课时间：{{item.teaching_time}}
+            <!--<span class="quote">2天3小时</span>-->
 
-                 
-             </span>
-             <span class="apply_time">时长：30分钟</span>
-             <div class="me_sign">
-             我要报名
+
+            </span>
+            <span class="apply_time">时长：{{item.time_length}}分钟</span>
+            <div class="me_sign" ng-if="item.surplus_quota!=0">
+              我要报名
+            </div>
+            <div class="me_sign gray" ng-if="item.surplus_quota==0">
+              已结束
+            </div>
           </div>
-          </div>
-          
-          </div>
-         
+
+        </div>
+
       </div>
-      
       <div class="apply_table">
-      
-      <div class="apply_table_title">
-         <span class="course_overview">课程概述</span>
-      </div>
-        <table class="detail_table">
-           <tr>
-           <td width="10%">课程简介</td>
-           <td class="detail_content moreinfo" width="90%">课程从17个不同的方面为您讲解营改增税收业务的变化，还将为您讲解融资租赁行业相关的基本税收政策、税收优惠、热点难点问题等。</td>
-         </tr>
-          <tr>
-           <td>所属分局</td>
-           <td class="detail_content">江苏省国税局</td>
-         </tr>
-          <tr>
-           <td>授课时间</td>
-           <td class="detail_content">2015-11-27 17:00 </td>
-         </tr>
-          <tr>
-           <td>讲师</td>
-           <td class="detail_content">张晓丽</td>
-         </tr>
-  
-          <tr>
-           <td>授课地址</td>
-           <td class="detail_content">江宁区国税局纳税人学堂</td>
-         </tr>
-        
-           <tr>
-           <td>课件下载</td>
-           <td class="detail_content"><a class="download_info" href="#">发票申领讲解</a></td>
-         </tr>
 
-       </table>
-       
+        <div class="apply_table_title">
+          <span class="course_overview">课程概述</span>
+        </div>
+        <table class="detail_table">
+          <tr>
+            <td width="10%">课程简介</td>
+            <td class="detail_content moreinfo" width="90%">{{item.discription}}</td>
+          </tr>
+          <tr>
+            <td>所属分局</td>
+            <td class="detail_content">{{item.user_id}}</td>
+          </tr>
+          <tr>
+            <td>授课时间</td>
+            <td class="detail_content">{{item.teaching_time}} </td>
+          </tr>
+          <tr>
+            <td>讲师</td>
+            <td class="detail_content">{{item.sponsor}}</td>
+          </tr>
+
+          <tr>
+            <td>授课地址</td>
+            <td class="detail_content">{{item.area}}</td>
+          </tr>
+
+          <tr>
+            <td>课件下载</td>
+            <td class="detail_content"><a class="download_info" ng-href="{{courseware.file_path}}">{{courseware.courseware_name}}</a></td>
+          </tr>
+
+        </table>
+
       </div>
-       
+
     </div>
 
-
-</div>	
+  </div>
+</div>

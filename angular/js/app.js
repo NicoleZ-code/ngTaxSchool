@@ -86,6 +86,14 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 } 
             }
         })        
+        .state('index.videoClass.detail', {
+            url: '/{courseId:[0-9]{1,4}}',
+            views:{
+                'main@index': {
+                    templateUrl: 'view/videoClassView.html'
+                }
+            }
+        })  
 
         .state('index.interactivePlace.more', {
             url: '/index.interactivePlace.more',

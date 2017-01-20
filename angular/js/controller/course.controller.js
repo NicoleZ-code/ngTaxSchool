@@ -28,6 +28,37 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
                 $scope.list = data;
             })
     })
+    .controller('courseDetailCtl', function ($scope, $http, $state, $stateParams, searchService) {
+        $scope.courseware = {};
+        $scope.item = {};
+        searchService.getAllItems('data/courseEntity.json')
+            .success(function (data) {
+               for(var i = 0 ; i < data.length ; i++ ){
+                    if(data[i].course_id==$stateParams.courseId){
+                        $scope.item = data[i];
+                        break;
+                    }
+                }
+                
+            });
+        
+        getcourseware($stateParams.courseId);    
+
+        function getcourseware(courseId){
+            searchService.getAllItems('data/courseware.json')
+                .success(function (data) {
+                    for(var i = 0 ; i < data.length ; i++ ){
+                        if(data[i].course_id==$stateParams.courseId){
+                            console.log(data[i])
+                            $scope.courseware = data[i];
+                            break;
+                        }
+                    }
+                    
+                });
+        }
+
+    })
 
     /**
      * 视频教程
@@ -47,6 +78,20 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
             .success(function (data) {
                 $scope.list = data;
                 //模拟数据库的一些数据查询
+            })
+    })
+    .controller('videoDetailCtl', function ($scope, $http, $state, $stateParams, searchService) {
+        $scope.isList = true;
+        $scope.item = {};
+        searchService.getAllItems('data/courseOnline.json')
+            .success(function (data) {
+                for(var i = 0 ; i < data.length ; i++ ){
+                    if(data[i].course_id==$stateParams.courseId){
+                        console.log(data[i])
+                        $scope.item = data[i];
+                        break;
+                    }
+                }
             })
     })
     /**
@@ -69,6 +114,7 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
                 $scope.list = data;
             })
     })
+    
     /**
      * 课件相关下载
      */
@@ -85,5 +131,6 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
         searchService.getAllItems('data/courseware.json')
             .success(function (data) {
                 $scope.list = data;
+                console.log(data)
             })
     })

@@ -56,7 +56,7 @@
 	<tabs>
 		<pane title="最热视频">
 			<ul ng-controller="videoHotListCtl">
-				<li ng-repeat="item in list | limitTo: 10" ui-sref="index.video.detail({courseId:item.course_id})">
+				<li ng-repeat="item in list | limitTo: 10 | orderBy:'item.video_click_number'" ui-sref="index.videoClass.detail({courseId:item.course_id})">
 					<hoveritem>
 						<single><em class="num">{{$index+1}}</em>{{item.course_name}}</single>
 						<detail>
@@ -73,15 +73,15 @@
 		</pane>
 		<pane title="推荐视频">
 			<ul ng-controller="videoReListCtl">
-				<li ng-repeat="item in list | limitTo: 10 " ui-sref="index.videoClass.detail({courseId:item.id})">
+				<li ng-repeat="item in list | limitTo: 10 " ui-sref="index.videoClass.detail({courseId:item.course_id})">
 					<hoveritem>
-						<single><em class="num">{{$index+1}}</em>3-{{item.name}}</single>
+						<single><em class="num">{{$index+1}}</em>{{item.course_name}}</single>
 						<detail>
-							<span class="videoimg"><img ng-src="{{item.imgurl}}" alt="{{item.imgurl}}"></span>
+							<span class="videoimg"><img ng-src="{{item.img_path}}" alt="{{item.img_path}}"></span>
 							<dl>
-								<dd class="name">2-{{item.name}}</dd>
-								<dd class="teacher">讲师 : {{item.teacher}}</dd>
-								<dd class="time">时长 : {{item.time}}</dd>
+								<dd class="name">{{item.course_name}}</dd>
+								<dd class="teacher">课程类别 : {{item.course_type}}</dd>
+								<dd class="time">浏览次数 : {{item.video_click_number}}</dd>
 							</dl>
 						</detail>
 					</hoveritem>
