@@ -14,7 +14,7 @@
 				<div class="teract_content" ng-repeat="item in datas | filter:{type:'a'} | limitTo:3">
 					<p class="teract_content_title">
 						<span class="teract_number">{{$index+1}}</span>
-						{{item.title}}
+						<span ui-sref="index.interactivePlace.more.detail({courseId:item.num})">{{item.title}}</span>
 					</p>
 					<div class="teract_content_detail">
 						<a>{{item.content}}</a>
@@ -31,7 +31,7 @@
 				<div class="teract_content" ng-repeat="item in datas | filter:{type:'b'} | limitTo:2">
 					<p class="teract_content_title">
 						<span class="teract_number">{{$index+1}}</span>
-						{{item.title}}
+						<span ui-sref="index.interactivePlace.more.detail({courseId:item.num})">{{item.title}}</span>
 					</p>
 					<div class="teract_content_detail">
 						<a>{{item.content}}</a>
@@ -50,7 +50,7 @@
 				<div class="teract_content" ng-repeat="item in datas | filter:{type:'c'} | limitTo:3">
 					<p class="teract_content_title">
 						<span class="teract_number">{{$index+1}}</span>
-						{{item.title}}
+						<span ui-sref="index.interactivePlace.more.detail({courseId:item.num})">{{item.title}}</span>
 					</p>
 					<div class="teract_content_detail">
 						<a>{{item.content}}</a>
@@ -67,7 +67,7 @@
 				<div class="teract_content" ng-repeat="item in datas | filter:{type:'d'} | limitTo:2">
 					<p class="teract_content_title">
 						<span class="teract_number">{{$index+1}}</span>
-						{{item.title}}
+						<span ui-sref="index.interactivePlace.more.detail({courseId:item.num})">{{item.title}}</span>
 					</p>
 					<div class="teract_content_detail">
 						<a>{{item.content}}</a>
