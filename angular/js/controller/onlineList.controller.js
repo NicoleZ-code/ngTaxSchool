@@ -23,6 +23,17 @@ onlineListModule.controller("onlineListCtrl",function($scope, $http, $state, $st
 		$scope.datas = data;
 	});
 })
+/*测评页*/
 .controller("onlineListDetailCtrl",function($scope, $http, $state, $stateParams){
-	
+	$http.get("../angular/data/onlineQuestionData.json")
+	.success(function(data){   
+		$scope.datas = data;
+	});
+})
+/*答案页*/
+.controller("onlineListKeyCtrl",function($scope, $http, $state, $stateParams){
+	$http.get("../angular/data/onlineQuestionData.json")
+	.success(function(data){   
+		$scope.datas = data;
+	});
 })

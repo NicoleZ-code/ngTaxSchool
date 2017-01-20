@@ -12,72 +12,13 @@
 				<div class="qusort">
 					一、单选题
 				</div>
-				<div class="qu-item now"><!-- now -->
-					<p>1.<span>题目一：关于完善研究开发费用</span></p>
+				<div class="qu-item" ng-class="{'now':{{item.id}} == 1}" ng-repeat="item in datas">
+					<p>{{$index+1}}.<span>{{item.title}}</span></p>
 					<ul>
-						<li>A.关于完善研究开发费用税前加计扣除政策的通知关于完善研究开发费用税前加计扣除政策的通知关于完善研究开发费用税前加计扣除政策的通知关于完善研究开发费用税前加计扣除政策的通知关于完善研究开发费用税前加计扣除政策的通知关于完善研究开发费用税前加计扣除政策的通知</li>
-						<li>B.XXXXX</li>
-						<li>C.XXXXX</li>
-						<li>D.XXXXX</li>
-						<li>E.XXXXX</li>
+						<li ng-repeat="iteminner in item.answer">{{iteminner.option}}.{{iteminner.content}}</li>
 					</ul>
 					<div class="select">
-						<span><input type="radio" name="qu1"><label>A</label></span>
-						<span><input type="radio" name="qu1"><label>B</label></span>
-						<span><input type="radio" name="qu1"><label>C</label></span>
-						<span><input type="radio" name="qu1"><label>D</label></span>
-						<span><input type="radio" name="qu1"><label>E</label></span>
-					</div>
-				</div>
-				<div class="qu-item">
-					<p>2.<span>题目二：关于完善研究开发费用税前加计扣除政策的通知</span></p>
-					<ul>
-						<li>A.XXXXX</li>
-						<li>B.XXXXX</li>
-						<li>C.XXXXX</li>
-						<li>D.XXXXX</li>
-						<li>E.XXXXX</li>
-					</ul>
-					<div class="select">
-						<span><input type="radio" name="qu2"><label>A</label></span>
-						<span><input type="radio" name="qu2"><label>B</label></span>
-						<span><input type="radio" name="qu2"><label>C</label></span>
-						<span><input type="radio" name="qu2"><label>D</label></span>
-						<span><input type="radio" name="qu2"><label>E</label></span>
-					</div>
-				</div>
-				<div class="qu-item">
-					<p>3.<span>题目三：xxxxxxxxxxxxx</span></p>
-					<ul>
-						<li>A.XXXXX</li>
-						<li>B.XXXXX</li>
-						<li>C.XXXXX</li>
-						<li>D.XXXXX</li>
-						<li>E.XXXXX</li>
-					</ul>
-					<div class="select">
-						<span><input type="radio" name="qu3"><label>A</label></span>
-						<span><input type="radio" name="qu3"><label>B</label></span>
-						<span><input type="radio" name="qu3"><label>C</label></span>
-						<span><input type="radio" name="qu3"><label>D</label></span>
-						<span><input type="radio" name="qu3"><label>E</label></span>
-					</div>
-				</div>
-				<div class="qu-item">
-					<p>4.<span>题目四：xxxxxxxxxxxx</span></p>
-					<ul>
-						<li>A.XXXXX</li>
-						<li>B.XXXXX</li>
-						<li>C.XXXXX</li>
-						<li>D.XXXXX</li>
-						<li>E.XXXXX</li>
-					</ul>
-					<div class="select">
-						<span><input type="radio" name="qu4"><label>A</label></span>
-						<span><input type="radio" name="qu4"><label>B</label></span>
-						<span><input type="radio" name="qu4"><label>C</label></span>
-						<span><input type="radio" name="qu4"><label>D</label></span>
-						<span><input type="radio" name="qu4"><label>E</label></span>
+						<span ng-repeat="iteminner in item.answer"><input type="radio" name="qu{{item.id}}"><label>{{iteminner.option}}</label></span>
 					</div>
 				</div>
 			</div>
@@ -166,5 +107,3 @@
 	});
 
 </script>
-</body>
-</html>
