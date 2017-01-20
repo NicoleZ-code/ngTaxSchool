@@ -1,90 +1,105 @@
+<div class="common_container">
+    <div class="course_container" id="course_container">
+        <p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">课件下载</a>>>
 
-<div class="common_container" >
-  <div class="course_container" id="course_container">
-		<p class="position">当前位置: <a href="#">学堂首页</a> >><a href="#">课件下载</a>>>
-     
-     <span class="fork_detail">
+            <span class="fork_detail">
       <span id="fork" class="fork">营改增</span><span class="fork_img"><img src="public/images/fork.png" width="10" height="10"/></span>
-    </span>
-    </p>
+            </span>
+        </p>
 
-	<div class="course_left">
-      <div class="course_search">
-          <div class="launch_detail" style="display:none">
-             <span class="launch_search"></span>
-             <span class="launch_search_name">展开搜索</span>
-          </div>
-         <div class="course_top">
-             <div class="course_search1"> 
-               <label>课程名称：</label>
-               <input type="text">
-               <span class="search_btn">搜索</span>
-              </div>
-                 <div class="course_search1"> 
-               <label class='time_label'>授课时间：</label>
-                 <input type="text"  id="actionDate" class="easyui-datebox">
-                 <label class="time_to">到</label>
-               <input type="text"  class="easyui-datebox">
-              </div>
-              <div class="course_search1 single_change"> 
-                 <label class="class_course">分类课程：</label>
-                  <span class="course_name">增值税</span>
-                  <span class="course_name">消费税</span>
-                  <span class="course_name">企业所得税</span>
-                  <span class="course_name">车辆购置税</span>
-                  <span class="course_name">进出口税收</span>
-                  <span class="course_name">非居民税收</span>
-                  <span class="course_name">其他</span>
-              </div>
-              <div class="course_search1 course_searchlast single_change"> 
-                 <label class="class_course">专题课程：</label>
-                  <span class="course_name">新办纳税人</span>
-                  <span class="course_name li_on">营改增</span>
-                  <span class="course_name">小微企业税收优惠</span>
-                  <span class="course_name">电子税务局</span>
-              </div>
-         </div>
-           <div class="searchdiv-fold open">收起搜索</div>
+        <div class="course_left">
+            <div class="course_search">
+                <div class="launch_detail" style="display:none">
+<span class="launch_search"></span>
+<span class="launch_search_name">展开搜索</span>
+</div>
+<div class="course_top">
+    <div class="course_search1">
+        <label>课程名称：</label>
+        <input type="text">
+        <span class="search_btn">搜索</span>
+    </div>
+    <div class="course_search1">
+        <label class='time_label'>授课时间：</label>
+        <input type="text" id="actionDate" class="easyui-datebox">
+        <label class="time_to">到</label>
+        <input type="text" class="easyui-datebox">
+    </div>
+    <div class="course_search1 single_change">
+        <label class="class_course">分类课程：</label>
+        <span class="course_name">增值税</span>
+        <span class="course_name">消费税</span>
+        <span class="course_name">企业所得税</span>
+        <span class="course_name">车辆购置税</span>
+        <span class="course_name">进出口税收</span>
+        <span class="course_name">非居民税收</span>
+        <span class="course_name">其他</span>
+    </div>
+    <div class="course_search1 course_searchlast single_change">
+        <label class="class_course">专题课程：</label>
+        <span class="course_name">新办纳税人</span>
+        <span class="course_name li_on">营改增</span>
+        <span class="course_name">小微企业税收优惠</span>
+        <span class="course_name">电子税务局</span>
+    </div>
+</div>
+<div class="searchdiv-fold open">收起搜索</div>
 
-          <div class="course_main">
-            <div class="main_top">
-                <span class="course_data active" data-option="all">全部课件</span>
-                <!--<span class="course_data" data-option="new">最新课件</span> -->
-                <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
-                <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
-            </div>
-            <ul id="coursecontent" class="list">             
-            </ul>          
-          </div>
-          <!--分页-->
-         <div class="commonpage"></div>     
-         <!--分页-->
-      </div>
-  </div>
+<div class="course_main" ng-controller="coursewareSearchCtl">
+    <div class="main_top">
+        <span class="course_data active">全部课件</span>
+        <div class='course_style list ' ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
+        <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
+    </div>
 
-    <tabs>
-        <pane title="相关下载">
-            <ul ng-controller="coursewareListCtl">
-                <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.id})">    
-                    <hoveritem>
-                        <single><em class="num">{{$index+1}}</em>{{item.courseware_name}}</single>
-                        <detail>
-                            <span class="videoimg"><img ng-src="public/images/video01.jpg"></span>
-                            <dl>
-                                <dd class="name">{{item.courseware_name}}</dd>
-                                <dd class="teacher">讲师 : {{item.lecturer}}</dd>
-                                <dd class="time">大小 : {{item.courseware_size}}M</dd>
-                            </dl>    
-                        </detail> 
-                    </hoveritem>
-                </li>
-            </ul>
-        </pane>
-    </tabs>
+    <ul id="coursecontent" class="list" ng-class="{table:!isList,list:isList}">
+        <li ng-repeat="item in list | limitTo: 8">
+            <span class="left_img" ui-sref="index.videoClass.detail({courseId:item.id})">
+                <img ng-src='public/images/video01.jpg' width='176' height='121'>
+            </span>
+            <span class="cousrsetitle" ui-sref="index.videoClass.detail({courseId:item.id})">{{item.courseware_name}}</span>
+            <span class="unit">
+                 <span class="unit_name">{{item.lecturer}}</span>
+                 <span class="date">{{item.upload_time}}</span>
+            </span>
+            <span class="detail_content">{{item.discription}}</span>
+            <span class="type"><em>课程</em>类型 : {{item.course_type}}</span>
+            <span class="size intersize">大小 : {{item.courseware_size}}M</span>
+            <span class="zero" ng-class="{'orange':item.count!=0}">点击量 : {{item.video_click_number}} </span>
+            <span class="now_down">立即下载</span>
+        </li>
 
-  </div>
-	
+    </ul>
+    <!--分页-->
+    <div class="commonpage"></div>
+    <!--分页-->
+</div>
+
+</div>
+</div>
+
+<tabs>
+    <pane title="相关下载">
+        <ul ng-controller="coursewareListCtl">
+            <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.id})">
+                <hoveritem>
+                    <single><em class="num">{{$index+1}}</em>{{item.courseware_name}}</single>
+                    <detail>
+                        <span class="videoimg"><img ng-src="public/images/video01.jpg"></span>
+                        <dl>
+                            <dd class="name">{{item.courseware_name}}</dd>
+                            <dd class="teacher">讲师 : {{item.lecturer}}</dd>
+                            <dd class="time">大小 : {{item.courseware_size}}M</dd>
+                        </dl>
+                    </detail>
+                </hoveritem>
+            </li>
+        </ul>
+    </pane>
+</tabs>
+
+</div>
 
 
-</div>	
 
+</div>
