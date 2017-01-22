@@ -11,6 +11,8 @@ require.config({
 		'utils-directive':'js/utils/utils-directive',
 		'home.controller':'js/controller/home.controller',
 		'course.controller':'js/controller/course.controller',
+		'video.controller':'js/controller/video.controller',
+		'courseware.controller':'js/controller/courseware.controller',
 		'interactive.controller':'js/controller/interactive.controller',
 		'onlineList.controller':'js/controller/onlineList.controller'
 	},
@@ -29,6 +31,8 @@ require.config({
 		'utils-service': {deps:['angular','angular-ui']},
 		'home.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
 		'course.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
+		'video.controller': {deps:['angular','angular-ui','utils-directive','utils-service','course.controller']},
+		'courseware.controller': {deps:['angular','angular-ui','utils-directive','utils-service','course.controller']},
 		'interactive.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
 		'onlineList.controller': {deps:['angular','angular-ui','utils-directive','utils-service']}
 	}
@@ -44,6 +48,8 @@ require([
 		'utils-directive',
 		'home.controller',
 		'course.controller',
+		'video.controller',
+		'courseware.controller',
 		'interactive.controller',
 		'onlineList.controller',
 		'TweenMax',
