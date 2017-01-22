@@ -78,11 +78,11 @@
 										<span class="learn">{{item.teaching_time}}</span>
 									</div>
 									<div class="detail">
-										<div class="pic">
+										<div class="pic" ui-sref="index.course.detail({courseId:item.course_id})">
 											<img ng-src="{{item.img_path}}">
 										</div>
 										<div class="intro tx_unbr">
-											{{item.course_name}}
+											<span ui-sref="index.course.detail({courseId:item.course_id})">{{item.course_name}}</span>
 											<span class="teacher">
 												<span class="teacher_icon"></span>{{item.sponsor}}
 												<span class="time"></span>{{item.teaching_time}}

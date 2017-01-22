@@ -6,6 +6,8 @@ require.config({
         'kinMaxShow':'libs/jquery.kinMaxShow-1.1.min',
 		'angular':'libs/angular-1.3.0.14/angular',
         'angular-ui':'libs/angular-ui-router',
+		'angular-momentjs':'libs/angular-momentjs-master/angular-momentjs',
+		'moment':"libs/moment",
 		'app':'js/app',
 		'utils-service':'js/utils/utils-service',
 		'utils-directive':'js/utils/utils-directive',
@@ -26,6 +28,7 @@ require.config({
 		'kinMaxShow' : {deps:['jquery']},
 		'angular' : {'exports' : 'angular'},
 		'angular-ui': {deps:['angular']},
+		'angular-momentjs':{deps:['angular']},
 		'app': {deps:['angular','angular-ui']},
 		'utils-directive': {deps:['angular','angular-ui']},
 		'utils-service': {deps:['angular','angular-ui']},
@@ -41,7 +44,9 @@ require.config({
 
 require([
 	    'jquery',
+		'moment',
         'angular',
+		'angular-momentjs',
         'angular-ui',
 		'app',
 		'utils-service',
@@ -55,7 +60,8 @@ require([
 		'TweenMax',
 		'kinMaxShow'
 		 ],
-   function(jquery,angular){
-	   //手动启动ng-app
+   function(jquery,moment,angular,$moment){
+	   //手动启动ng-app	   
 	   angular.bootstrap(document, ['routerApp']);
+	//    moment().format();
    });

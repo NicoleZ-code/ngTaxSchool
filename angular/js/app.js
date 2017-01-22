@@ -2,6 +2,7 @@ var routerApp = angular.module('routerApp',
         [
              'ui.router',
              'utils',
+             'angular-momentjs',
              'HomeModule',
              'CourseModule',
              'InteractiveModule',

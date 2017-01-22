@@ -7,6 +7,7 @@ courseMoudle.controller('videoListCtl', function ($scope, $http, $state, $stateP
         .success(function (data) {
             $scope.list = data;
         })
+    
 })
     .controller('searchVideoCtl', function ($scope, $http, $state, $stateParams, searchService) {
         $scope.isList = true; //list table  格式切换

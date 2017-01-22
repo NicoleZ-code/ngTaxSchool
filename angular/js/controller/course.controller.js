@@ -2,8 +2,11 @@
 /**
  * 实体课程列表
  */
+// Full stack trace
+    // Error.stackTraceLimit = Infinity;
 
 courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, $stateParams, searchService) {
+    
     $scope.list = searchService.init();
     // console.log(searchService.init(),$scope.list) //多一个length
     searchService.getAllItems('data/courseEntity.json')
@@ -12,7 +15,7 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
         })
 
     //格式化字符串
-    $scope._intFormat = function (_int) {
+    $scope.intFormat = function (_int) {
         if (_int < 9) {
             return "0" + (_int + 1);
         } else {
@@ -21,12 +24,18 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
     }
 
 })
-    .controller('searchCourseCtl', function ($scope, $http, $state, $stateParams, searchService) {
+    .controller('searchCourseCtl', function ($scope, $http, $state, $stateParams, searchService,$moment) {
+        $scope.isList = true;
         $scope.list = searchService.init();
         searchService.getAllItems('data/courseEntity.json')
             .success(function (data) {
                 $scope.list = data;
-            })
+            })         
+       
+        $scope.timeFormat = function (item){
+            return item.teaching_time = "2016-10-10"//$moment(item.teaching_time);
+        };
+        // $scope.timeFormat = searchService.timeFormat(item,"teaching_time"); //error
     })
     .controller('courseDetailCtl', function ($scope, $http, $state, $stateParams, searchService) {
         $scope.courseware = {};

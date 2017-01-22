@@ -5,8 +5,8 @@
 /**
  * 搜索项
  */
-var courseMoudle = angular.module('CourseModule',[]);
-courseMoudle.factory('searchService', ['$http',function($http) {
+var courseMoudle = angular.module('CourseModule',['angular-momentjs']);
+courseMoudle.factory('searchService', ['$http' ,'$moment',function($http,$moment) {
         var item = {
             "id":"",
             "imgurl":"",
@@ -73,4 +73,7 @@ courseMoudle.factory('searchService', ['$http',function($http) {
 //     }else{
 //         return (_int+1);
 //     }
+// })
+// .filter('',function($scope,$moment){
+//     $scope.time = $moment("20111031", "YYYYMMDD").fromNow();
 // })

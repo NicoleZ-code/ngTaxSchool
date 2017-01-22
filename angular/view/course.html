@@ -58,12 +58,12 @@
                     <div class="main_top">
                         <span class="course_data" ng-click="courseType='entity'" ng-class="{'active':courseType=='entity'}" ng-init="courseType='entity'">实体课程</span>
                         <span class="course_data" ng-click="courseType='online'" ng-class="{'active':courseType=='online'}">网络课程</span> 
-                        <div class="course_style list" ng-click="isList=true" ng-class="{active:isList}"><span></span></div>
+                        <div class="course_style list" ng-click="isList=true" ng-class="{active:isList}" ng-init="isList=true"><span></span></div>
                         <div class="course_style table" ng-click="isList=false" ng-class="{active:!isList}"><span></span></div>
                     </div>
                     <div ng-show="courseType=='entity'">
                         <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}">  
-                            <li ng-repeat="item in list | limitTo: 8">
+                            <li ng-repeat="item in list | limitTo: 8 | filter:timeFormat">
                                 <span class="left_img" ui-sref="index.course.detail({courseId:item.course_id})">
                                     <img ng-src='{{item.img_path}}' width='176' height='121'>
                                 </span>
@@ -98,7 +98,7 @@
                    <div ng-show="courseType=='online'" >
                         <ul id="coursecontent" class="list"  ng-class="{table:!isList,list:isList}" >  
                             <i ng-controller="searchVideoCtl">
-                                <li ng-repeat="item in list | limitTo: 8">
+                                <li ng-repeat="item in list | limitTo: 8 | filter:timeFormat">
                                     <span class="left_img" ui-sref="index.videoClass.detail({courseId:item.course_id})">
                                         <img ng-src='{{item.img_path}}' width='176' height='121'>
                                     </span>
