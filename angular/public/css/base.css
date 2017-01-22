@@ -868,9 +868,7 @@ body {
   background: #f29600;
   color: #fff;
   padding: 2px 15px;
-  margin-left: 40px;
-
-
+  margin-left: 40px; 
 }
 .rank li .detail .intro .adress {
     color: #999999;
@@ -886,15 +884,20 @@ body {
   padding-bottom: 20px;
 }
 .common_question ul li .course_detial{
+  float: left;
   margin-left: 20px;
+  width: 240px;
+  overflow: hidden;
 }
 .common_question ul li .course_detial p{
   height: 30px;
   line-height: 30px;
   color: #aeadad;
   position: relative;
-
-
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .common_question ul li .course_detial p.train{
  color: #231815; 

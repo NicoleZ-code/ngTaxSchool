@@ -2,14 +2,9 @@
  * 首页
  */
 
-/*轮播图片*/
 var homeModule = angular.module("HomeModule",[]);
-homeModule.controller("homeBannerImg", function($scope, $http, $state, $stateParams){
-	$scope.src = "public/images/video.png";
-})
-
 /*最新通知*/
-.controller("homeNewNotice",function($scope, $http, $state, $stateParams){
+homeModule.controller("homeNewNotice",function($scope, $http, $state, $stateParams){
 	$http.get("../angular/data/interactiveData.json")
     .success(function(data) {  //data中的type:a代表最新通知
        $scope.list = data;
@@ -22,11 +17,11 @@ homeModule.controller("homeBannerImg", function($scope, $http, $state, $statePar
 	$scope.setCurrent = function(param){
 		$scope.data.current = param;
 	}
-	$http.get("../angular/data/entityClassData.json")
+	$http.get("../angular/data/courseEntity.json")//实体课程推荐
 	.success(function(data){
 		$scope.data1 = data;
 	});
-	$http.get("../angular/data/onlineClassData.json")
+	$http.get("../angular/data/courseOnline.json")//网络课程推荐
 	.success(function(data){
 		$scope.data2 = data;
 	});
