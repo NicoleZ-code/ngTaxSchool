@@ -5,8 +5,8 @@
 /**
  * 搜索项
  */
-var courseMoudle = angular.module('CourseModule',['angular-momentjs']);
-courseMoudle.factory('searchService', ['$http' ,'$moment',function($http,$moment) {
+var courseMoudle = angular.module('CourseModule',['tools','angular-momentjs']);
+courseMoudle.factory('searchService', ['$http' ,function($http) {
         var item = {
             "id":"",
             "imgurl":"",

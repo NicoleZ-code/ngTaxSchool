@@ -1,8 +1,8 @@
 var routerApp = angular.module('routerApp', 
         [
              'ui.router',
-             'utils',
-             'angular-momentjs',
+             'utils',           
+             'tools',
              'HomeModule',
              'CourseModule',
              'InteractiveModule',
@@ -13,6 +13,7 @@ var routerApp = angular.module('routerApp',
             // 'UserManageMoudle'
          ]
     );
+    
 /**
  * 方便获得当前状态的方法，绑到根作用域。
  * 由于整个应用都会和路由打交道，所以这里把$state和$stateParams这两个对象放到$rootScope上，方便其它地方引用和注入。
@@ -146,6 +147,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         //     templateUrl: 'view/bookDetail.html'
         // })
 });
+routerApp.config(function($momentProvider){
+      $momentProvider
+        .asyncLoading(true)
+        .scriptUrl('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js');
+        // You're able to add another version of Moment.js
+    })
 
 /** 
  * 路由权限验证管理

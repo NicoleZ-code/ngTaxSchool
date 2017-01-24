@@ -13,29 +13,14 @@ courseMoudle.controller('courseEntityListCtl', function ($scope, $http, $state, 
         .success(function (data) {
             $scope.list = data;
         })
-
-    //格式化字符串
-    $scope.intFormat = function (_int) {
-        if (_int < 9) {
-            return "0" + (_int + 1);
-        } else {
-            return (_int + 1);
-        }
-    }
-
 })
-    .controller('searchCourseCtl', function ($scope, $http, $state, $stateParams, searchService,$moment) {
+    .controller('searchCourseCtl', function ($scope, $http, $state, $stateParams, searchService) {
         $scope.isList = true;
         $scope.list = searchService.init();
         searchService.getAllItems('data/courseEntity.json')
             .success(function (data) {
                 $scope.list = data;
-            })         
-       
-        $scope.timeFormat = function (item){
-            return item.teaching_time = "2016-10-10"//$moment(item.teaching_time);
-        };
-        // $scope.timeFormat = searchService.timeFormat(item,"teaching_time"); //error
+            })                
     })
     .controller('courseDetailCtl', function ($scope, $http, $state, $stateParams, searchService) {
         $scope.courseware = {};

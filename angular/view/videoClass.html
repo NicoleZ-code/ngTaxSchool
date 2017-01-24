@@ -58,7 +58,7 @@
 			<ul ng-controller="videoHotListCtl">
 				<li ng-repeat="item in list | limitTo: 10 | orderBy:'item.video_click_number'" ui-sref="index.videoClass.detail({courseId:item.course_id})">
 					<hoveritem>
-						<single><em class="num">{{$index+1}}</em>{{item.course_name}}</single>
+						<single><em class="num">{{$index|initFormat:$index}}</em>{{item.course_name}}</single>
 						<detail>
 							<span class="videoimg"><img ng-src="{{item.img_path}}" alt="{{item.img_path}}"></span>
 							<dl>
@@ -75,7 +75,7 @@
 			<ul ng-controller="videoReListCtl">
 				<li ng-repeat="item in list | limitTo: 10 " ui-sref="index.videoClass.detail({courseId:item.course_id})">
 					<hoveritem>
-						<single><em class="num">{{$index+1}}</em>{{item.course_name}}</single>
+						<single><em class="num">{{$index|initFormat:$index}}</em>{{item.course_name}}</single>
 						<detail>
 							<span class="videoimg"><img ng-src="{{item.img_path}}" alt="{{item.img_path}}"></span>
 							<dl>

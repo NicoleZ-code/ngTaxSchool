@@ -49,7 +49,8 @@
                         <span class="course_name">小微企业税收优惠</span>
                         <span class="course_name">电子税务局</span>
                         </div>
-                    </div>    	    
+                    </div>
+                       	    
                 </div>
                 <div class="searchdiv-fold open">收起搜索</div>
 
@@ -70,7 +71,7 @@
                                 <span class="cousrsetitle" ui-sref="index.course.detail({courseId:item.course_id})">{{item.course_name}}</span>
                                 <span class="unit">
                                     <span class="unit_name">{{item.user_id}}</span>
-                                    <span class="date">{{item.teaching_time}}</span>
+                                    <span class="date">{{item.teaching_time | dateFormat:item.teaching_time}}</span>
                                 </span>                    
                                 <span class="detail_content">{{item.discription}}</span>
                                 <span class="time"><em>时长 : </em>{{item.time_length}}分钟</span>
@@ -105,7 +106,7 @@
                                     <span class="cousrsetitle" ui-sref="index.videoClass.detail({courseId:item.course_id})">{{item.course_name}}</span>
                                     <span class="unit">
                                         <span class="unit_name">{{item.lecturer}}</span>
-                                        <span class="date">{{item.upload_time}}</span>
+                                        <span class="date">{{item.upload_time  | dateFormat:item.upload_time}}</span>
                                     </span>                    
                                     <span class="detail_content">{{item.discription}}</span>
                                     <span class="type"><em>课程</em>类型 : {{item.name}}</span>
@@ -133,7 +134,7 @@
                 <ul ng-controller="courseEntityListCtl">
                     <li ng-repeat="item in list | limitTo: 10" ui-sref="index.course.detail({courseId:item.course_id})">    
                         <hoveritem>
-                            <single><em class="num">{{$index+1}}</em>{{item.course_name}}</single>
+                            <single><em class="num">{{$index|initFormat:$index}}</em>{{item.course_name}}</single>
                             <detail>
                                 <span class="videoimg"><img ng-src="{{item.img_path}}" alt="{{item.img_path}}"></span>
                                 <dl>
@@ -150,7 +151,7 @@
                 <ul ng-controller="videoListCtl">
                     <li ng-repeat="item in list | limitTo: 10" ui-sref="index.videoClass.detail({courseId:item.course_id})">    
                         <hoveritem>
-                            <single><em class="num">{{$index+1}}</em>{{item.course_name}}</single>
+                            <single><em class="num">{{$index|initFormat:$index}}</em>{{item.course_name}}</single>
                             <detail>
                                 <span class="videoimg"><img ng-src="{{item.img_path}}" alt="{{item.img_path}}"></span>
                                 <dl>

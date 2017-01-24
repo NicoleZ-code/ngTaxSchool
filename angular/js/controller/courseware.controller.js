@@ -15,6 +15,5 @@ courseMoudle.controller('coursewareSearchCtl', function ($scope, $http, $state, 
         searchService.getAllItems('data/courseware.json')
             .success(function (data) {
                 $scope.list = data;
-                console.log(data)
             })
     })

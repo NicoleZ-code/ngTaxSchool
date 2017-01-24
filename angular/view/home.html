@@ -49,7 +49,8 @@
 					<div class="tab_content_item">
 						<dl ng-controller="homeNewNotice">
 							<dt ng-repeat="item in list | filter:{type:'a'} | limitTo:8" ui-sref="index.interactivePlace.more.detail({courseId:item.id})">
-								<span class="number" ng-class="{new:item.isNew,gray:!item.isNew}">{{$index+1}}</span>
+								<span class="number" ng-class="{new:item.isNew,gray:!item.isNew}">
+									{{$index|initFormat:$index}}</span>
 								{{item.title}}
 							</dt>
 						</dl>
@@ -73,9 +74,9 @@
 							<li ng-repeat="item in data1 | limitTo:12">
 								<a ng-class="{'hover':cur == {{$index}}}" ng-mouseenter="setHover($index)">
 									<div class="simple">
-										<span class="no">{{$index+1}}</span>
+										<span class="no">{{$index|initFormat:$index}}</span>
 										<span class="title_1 tx_unbr">{{item.course_name}}</span>
-										<span class="learn">{{item.teaching_time}}</span>
+										<span class="learn">{{item.teaching_time | dateFormat:item.teaching_time}}</span>
 									</div>
 									<div class="detail">
 										<div class="pic" ui-sref="index.course.detail({courseId:item.course_id})">
@@ -85,7 +86,7 @@
 											<span ui-sref="index.course.detail({courseId:item.course_id})">{{item.course_name}}</span>
 											<span class="teacher">
 												<span class="teacher_icon"></span>{{item.sponsor}}
-												<span class="time"></span>{{item.teaching_time}}
+												<span class="time"></span>{{item.teaching_time | dateFormat:item.teaching_time}}
 												<span class="sign_up" ui-sref="index.course.detail({courseId:item.course_id})">报名</span>
 											</span>
 											<span class="adress">授课地点：{{item.teaching_address}}&nbsp;&nbsp;剩余名额：{{item.surplus_quota}}</span>

@@ -11,6 +11,7 @@ require.config({
 		'app':'js/app',
 		'utils-service':'js/utils/utils-service',
 		'utils-directive':'js/utils/utils-directive',
+		'utils-tools':'js/utils/utils-tools',
 		'home.controller':'js/controller/home.controller',
 		'course.controller':'js/controller/course.controller',
 		'video.controller':'js/controller/video.controller',
@@ -32,6 +33,7 @@ require.config({
 		'app': {deps:['angular','angular-ui']},
 		'utils-directive': {deps:['angular','angular-ui']},
 		'utils-service': {deps:['angular','angular-ui']},
+		'utils-tools': {deps:['angular','angular-ui','angular-momentjs']},
 		'home.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
 		'course.controller': {deps:['angular','angular-ui','utils-directive','utils-service']},
 		'video.controller': {deps:['angular','angular-ui','utils-directive','utils-service','course.controller']},
@@ -44,13 +46,14 @@ require.config({
 
 require([
 	    'jquery',
-		'moment',
+		// 'moment',
         'angular',
 		'angular-momentjs',
         'angular-ui',
 		'app',
 		'utils-service',
 		'utils-directive',
+		'utils-tools',
 		'home.controller',
 		'course.controller',
 		'video.controller',
@@ -60,8 +63,10 @@ require([
 		'TweenMax',
 		'kinMaxShow'
 		 ],
-   function(jquery,moment,angular,$moment){
+   function(jquery,angular){
 	   //手动启动ng-app	   
 	   angular.bootstrap(document, ['routerApp']);
 	//    moment().format();
+
+	
    });
